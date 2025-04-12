@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 
@@ -20,7 +19,6 @@ export const Clients: React.FC = () => {
           sx={{
             textAlign: 'center',
             fontWeight: 700,
-            // mb: 6,
             fontFamily: '"DM Serif Display", serif',
             color: '#424242',
           }}
@@ -76,9 +74,9 @@ export const Clients: React.FC = () => {
               lineHeight: 1.8,
             }}
           >
-           <strong>We are the right team for your business. We have the expertise and knowledge to offer impartial advice and services at an honest price.</strong> 
+            <strong>We are your trusted partner in cleanliness. With years of experience and a trained team, we deliver thorough and reliable cleaning services every time.</strong>
             <br /><br />
-            With us you’ll feel heard. We listen to our client requirements and then select the right solution that fits. We care for your business as our own. We take a sincere interest in it and genuinely want to help your company reach its potential.
+            From residential to commercial spaces, we tailor our services to your specific needs using eco-friendly products and modern equipment. Our commitment to detail, punctuality, and customer satisfaction sets us apart. When you choose us, you're choosing a spotless experience and peace of mind.
           </Typography>
         </Box>
       </Container>

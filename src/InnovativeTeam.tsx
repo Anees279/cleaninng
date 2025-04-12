@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
-import image1 from './asserts/2-20250410T042223Z-001/2/1.jpg'; // Replace with your actual image paths
+import image1 from './asserts/2-20250410T042223Z-001/2/1.jpg';
 import image2 from './asserts/2-20250410T042223Z-001/2/2.jpg';
 import image3 from './asserts/2-20250410T042223Z-001/2/3.jpg';
 
@@ -12,7 +12,7 @@ export const InnovativeTeam: React.FC = () => {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: {xs: 'column', md: 'row'},
+            flexDirection: { xs: 'column', md: 'row' },
             gap: 3,
             textAlign: 'left',
             mb: 6,
@@ -26,7 +26,7 @@ export const InnovativeTeam: React.FC = () => {
               color: '#2C2927',
             }}
           >
-            Highly Motivated Team with Innovative Ideas
+            Dedicated Cleaning Experts with a Passion for Sparkle
           </Typography>
 
           <Typography
@@ -38,8 +38,7 @@ export const InnovativeTeam: React.FC = () => {
               maxWidth: 800,
             }}
           >
-            We love what we do and therefore come up with the best possible solutions to help you set and grow
-            online quickly. We are your trusted partners you can count on.
+            Our highly motivated team is committed to providing top-quality cleaning services that exceed expectations. We combine innovation with attention to detail, ensuring every space is left spotless and refreshed. With us, you're not just hiring a service — you're gaining a partner who truly cares.
           </Typography>
         </Box>
 
@@ -58,7 +57,7 @@ export const InnovativeTeam: React.FC = () => {
               key={index}
               component="img"
               src={img}
-              alt={`Team creativity ${index + 1}`}
+              alt={`Team at work ${index + 1}`}
               sx={{
                 flex: '1 1 30%',
                 maxWidth: { xs: '100%', sm: '48%', md: '30%' },
@@ -66,6 +65,10 @@ export const InnovativeTeam: React.FC = () => {
                 objectFit: 'cover',
                 borderRadius: 2,
                 boxShadow: 2,
+                transition: 'transform 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                },
               }}
             />
           ))}

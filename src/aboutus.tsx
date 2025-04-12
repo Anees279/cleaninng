@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
-import aboutImage from './asserts/3-20250410T042226Z-001/3/3.jpg'; // Replace with your actual image path
+import aboutImage from './asserts/3-20250410T042226Z-001/3/3.jpg';
 
 export const AboutUs: React.FC = () => {
   return (
     <Box
       sx={{
-        backgroundColor: '#FFF9C4', // Light yellow
+        backgroundColor: '#FFF9C4',
         py: { xs: 6, md: 10 },
       }}
     >
@@ -20,16 +20,17 @@ export const AboutUs: React.FC = () => {
           }}
         >
           {/* Left - Text Content */}
-          <Box sx={{ flex: 1 , color: '#424242'}}>
+          <Box sx={{ flex: 1, color: '#424242' }}>
             <Typography
               variant="h4"
               sx={{ fontWeight: 700, mb: 3, fontFamily: 'Poppins, sans-serif' }}
             >
               About Us
             </Typography>
-            <Typography sx={{ mb: 2, fontSize: '1.1rem', textAlign: 'justify', }}>
-              We are a team of 40 web experts with over 12 years of experience in website building and marketing to help businesses grow online.
+            <Typography sx={{ mb: 2, fontSize: '1.1rem', textAlign: 'justify' }}>
+              We are a team of dedicated cleaning professionals with over a decade of experience in delivering top-tier residential, commercial, and post-construction cleaning services.
             </Typography>
+
             <Typography
               variant="h6"
               sx={{ fontWeight: 600, mt: 4, fontFamily: 'Poppins, sans-serif' }}
@@ -37,8 +38,9 @@ export const AboutUs: React.FC = () => {
               Mission.
             </Typography>
             <Typography sx={{ textAlign: 'justify', mb: 2 }}>
-              Our mission is to empower our clients to use the internet to its full potential by providing affordable, effective, custom design and marketing solutions.
+              Our mission is to provide exceptional cleaning services that create healthier environments for our clients — whether it’s their home, office, or construction site. We focus on affordability, efficiency, and eco-friendly practices to ensure complete customer satisfaction.
             </Typography>
+
             <Typography
               variant="h6"
               sx={{ fontWeight: 600, mt: 4, fontFamily: 'Poppins, sans-serif' }}
@@ -46,11 +48,11 @@ export const AboutUs: React.FC = () => {
               Vision.
             </Typography>
             <Typography sx={{ textAlign: 'justify' }}>
-              Our vision is to become a global leader in providing the best and unique web design and marketing services to improve our client’s productivity and business strength.
+              Our vision is to be the most trusted name in the cleaning industry by setting new standards in service quality, customer care, and sustainability. We aim to continuously evolve our practices to create cleaner, safer, and more welcoming spaces for everyone we serve.
             </Typography>
           </Box>
 
-          {/* Right - Image */}
+          {/* Right - Image with Hover Effect */}
           <Box
             component="img"
             src={aboutImage}
@@ -62,6 +64,10 @@ export const AboutUs: React.FC = () => {
               boxShadow: 3,
               maxHeight: 400,
               objectFit: 'cover',
+              transition: 'transform 0.3s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              },
             }}
           />
         </Box>

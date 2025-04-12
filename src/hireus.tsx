@@ -1,10 +1,51 @@
+
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import BusinessIcon from '@mui/icons-material/Business';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import ParkIcon from '@mui/icons-material/Park';
+
+import image1 from './asserts/3-20250410T042226Z-001/3/1.jpg';
+import image2 from './asserts/3-20250410T042226Z-001/3/2.jpg';
+import image3 from './asserts/3-20250410T042226Z-001/3/3.jpg';
+import image4 from './asserts/3-20250410T042226Z-001/3/2.jpg';
 
 export const HireUs: React.FC = () => {
+  const services = [
+    {
+      title: 'Residential Cleaning',
+      description:
+        'Our web design team has ample years of experience in the core areas of design to build a website that you need.',
+      image: image1,
+      icon: <HomeIcon sx={{ fontSize: 40, color: '#4CAF50' }} />,
+    },
+    {
+      title: 'Commercial Cleaning',
+      description:
+        'Looking out for customized solutions for your websites? Our team will develop and deliver a website that’ll serve your purpose.',
+      image: image2,
+      icon: <BusinessIcon sx={{ fontSize: 40, color: '#2196F3' }} />,
+    },
+    {
+      title: 'Construction Cleaning',
+      description:
+        'With researched digital marketing, we will ensure that new customers and clients are able to find your business.',
+      image: image3,
+      icon: <ConstructionIcon sx={{ fontSize: 40, color: '#FF9800' }} />,
+    },
+    {
+      title: 'Landscape Cleaning',
+      description:
+        'With researched digital marketing, we will ensure that new customers and clients are able to find your business.',
+      image: image4,
+      icon: <ParkIcon sx={{ fontSize: 40, color: '#81C784' }} />,
+    },
+  ];
+
   return (
     <Box sx={{ py: 18, backgroundColor: '#FFF' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         {/* Main Heading */}
         <Typography
           variant="h3"
@@ -12,51 +53,66 @@ export const HireUs: React.FC = () => {
             textAlign: 'left',
             fontWeight: 700,
             mb: 6,
-            // padding: 2,
             fontFamily: '"DM Serif Display", serif',
             color: '#424242',
           }}
         >
-          Hire Us For
+          Our Services
         </Typography>
 
-        {/* Section Boxes */}
+        {/* Services Boxes */}
         <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
-            gap: 6,
+            gap: 2,
           }}
         >
-          {/* Design */}
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
-              Design
-            </Typography>
-            <Typography sx={{ textAlign: 'justify', color: '#555' }}>
-              Our web design team has ample years of experience in the core areas of design to build a website that you need.
-            </Typography>
-          </Box>
+          {services.map((service, index) => (
+            <Box
+              key={index}
+              sx={{
+                flex: 1,
+                border: '2px solid #e0e0e0',
+                borderRadius: 2,
+                p: 1,
+              }}
+            >
+              <Box
+                sx={{
+                  overflow: 'hidden',
+                  borderRadius: 2,
+                  mb: 2,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={service.image}
+                  alt={service.title}
+                  sx={{
+                    width: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'scale(1.05)',
+                    },
+                  }}
+                />
+              </Box>
 
-          {/* Development */}
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
-              Development
-            </Typography>
-            <Typography sx={{ textAlign: 'justify', color: '#555' }}>
-              Looking out for customized solutions for your websites? Our team will develop and deliver a website that’ll serve your purpose.
-            </Typography>
-          </Box>
+              {/* Logo/Icon */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+                {service.icon}
+              </Box>
 
-          {/* Marketing */}
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
-              Marketing
-            </Typography>
-            <Typography sx={{ textAlign: 'justify', color: '#555' }}>
-              With researched digital marketing, we will ensure that new customers and clients are able to find your business.
-            </Typography>
-          </Box>
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
+                {service.title}
+              </Typography>
+              <Typography sx={{ textAlign: 'justify', color: '#555' }}>
+                {service.description}
+              </Typography>
+            </Box>
+          ))}
         </Box>
       </Container>
     </Box>
