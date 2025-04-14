@@ -7,7 +7,7 @@ import image3 from './asserts/2-20250410T042223Z-001/2/3.jpg';
 export const InnovativeTeam: React.FC = () => {
   return (
     <Box sx={{ backgroundColor: '#fff', py: { xs: 6, md: 10 } }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         {/* Heading & Paragraph */}
         <Box
           sx={{

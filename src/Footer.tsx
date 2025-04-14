@@ -18,14 +18,15 @@ export const Footer: React.FC = () => {
           }}
         >
           {/* Address Section */}
-          <Box>
+          <Box
+          sx={{textAlign: { xs: 'center', md: 'left' }, mb: 4 }}>
             <Typography><strong>1234 N Spring St, Los Angeles, CA 90012</strong></Typography>
             <Typography><strong>mail@example.com</strong></Typography>
           </Box>
 
           {/* Links + Social Section */}
           <Box>
-            <Box sx={{ display: 'flex', flexDirection: { md: 'row', xs: 'column' }, gap: 6 }}>
+            <Box sx={{ display: 'flex', flexDirection: { md: 'row', xs: 'column' }, gap: 6 , textAlign: { xs: 'center', md: 'left' }}}>
               <Link href="#" underline="hover" color="inherit">Home</Link>
               <Link href="#" underline="hover" color="inherit">Services</Link>
               <Link href="#" underline="hover" color="inherit">About</Link>
@@ -56,7 +57,7 @@ export const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body2" sx={{ color: '#555' }}>
-            © 2025 voxdigify.com | Powered by voxdigify.com
+           coptright © 2025 voxdigify.com | Powered by voxdigify.com
           </Typography>
         </Box>
     </Box>

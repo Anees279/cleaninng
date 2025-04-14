@@ -12,7 +12,7 @@ const clientLogos = [logo1, logo2, logo3, logo4];
 export const Clients: React.FC = () => {
   return (
     <Box sx={{ py: { xs: 3, md: 10 }, backgroundColor: '#f9f9f9' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         {/* Clients Heading */}
         <Typography
           variant="h3"
@@ -67,7 +67,7 @@ export const Clients: React.FC = () => {
           <Typography
             variant="body1"
             sx={{
-              maxWidth: 1200,
+              maxWidth: 1500,
               margin: '0 auto',
               color: '#555',
               fontSize: '1.125rem',

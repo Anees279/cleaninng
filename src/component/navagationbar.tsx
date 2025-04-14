@@ -14,7 +14,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
-import bgImage from "../asserts/1-20250410T042209Z-001/1/3.jpg";
+// import bgImage from "../asserts/1-20250410T042209Z-001/1/3.jpg";
 import img from "../asserts/logo.png";
 
 const pages = [
@@ -41,12 +41,12 @@ function HomeHero() {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bgImage})`,
+        background: `transparent`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
         position: "relative",
         color: "#fff",
+        // borderRadius: 10,
         zIndex: 0,
       }}
     >
@@ -113,7 +113,7 @@ function HomeHero() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: grey[800],
+                  backgroundColor: grey[800],alignItems: "center",
                   "&:hover": { backgroundColor: grey[900] },
                 }}
               >
@@ -182,47 +182,7 @@ function HomeHero() {
       </Drawer>
 
       {/* Home Content */}
-      <Container
-        maxWidth="lg"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          height: "calc(80vh - 64px)",
-          px: 2,
-        }}
-      >
-        <Typography
-          sx={{
-            fontFamily: '"DM Serif Display", serif',
-            fontWeight: 900,
-            color: "#212121",
-            fontSize: { xs: "2.5rem", sm: "4rem", md: "80px" },
-            mt: 17,
-            maxWidth: "1000px",
-          }}
-        >
-          Residential & commercial cleaning services that you can trust.
-        </Typography>
-
-        <Typography
-          variant="h6"
-          component="p"
-          sx={{
-            color: "#212121",
-            textAlign: "justify",
-            lineHeight: 1.8,
-            maxWidth: "600px",
-            ml: isLargeScreen ? "auto" : 0,
-          }}
-        >
-          We take pride in delivering top-quality cleaning services tailored to
-          meet your needs. Whether it’s industrial facilities, residential
-          spaces, or garden areas, our professional team ensures every corner is
-          spotless. With attention to detail and a commitment to excellence, we
-          create clean, safe, and welcoming environments. 
-        </Typography>
-      </Container>
+     
     </Box>
   );
 }
