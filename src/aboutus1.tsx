@@ -3,7 +3,7 @@ import { Box, Typography, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import aboutImage from './asserts/3-20250410T042226Z-001/3/3.jpg';
 
-export const AboutUs: React.FC = () => {
+export const AboutU: React.FC = () => {
   return (
     <Box
       sx={{

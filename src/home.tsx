@@ -16,10 +16,16 @@ const CleaningHeroSection: React.FC = () => {
       <Box
         sx={{
           backgroundImage: `url(${bgImage})`, // update the path as needed
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          width: '100%',
+          zIndex: 0,
+
         }}
       >
       <ResponsiveRootsBar/>
@@ -27,11 +33,10 @@ const CleaningHeroSection: React.FC = () => {
         <Container
           maxWidth="xl"
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            height: "calc(100vh - 64px)",
-            px: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            height: '70vh',
             backdropFilter: "brightness(0.95)", // optional: makes text more readable
           }}
         >
@@ -73,6 +78,12 @@ const CleaningHeroSection: React.FC = () => {
       <Box>
        
       </Box>
+      <Box sx={{ height: '50vh' }} />
+      
+            {/* Scrollable About Section */}
+            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+             
+            </Box>
     </>
   );
 };

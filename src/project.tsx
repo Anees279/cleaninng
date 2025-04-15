@@ -4,7 +4,7 @@ import projectImage from './asserts/1-20250410T042209Z-001/1/1.jpg'; // Replace 
 
 export const ProjectCallToAction: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: '#2C2927', mt: { md: 9 } }}>
+    <Box sx={{ backgroundColor: '#2C2927', mt: { md: 9 } , position: 'relative', zIndex: 1 }}>
       <Container maxWidth="xl">
         <Box
           sx={{

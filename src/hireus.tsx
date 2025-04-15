@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
+import { motion } from 'framer-motion';
 import HomeIcon from '@mui/icons-material/Home';
 import BusinessIcon from '@mui/icons-material/Business';
 import ConstructionIcon from '@mui/icons-material/Construction';
@@ -44,7 +45,7 @@ export const HireUs: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: 18, backgroundColor: '#FFF' }}>
+    <Box sx={{ py: {md:10 , xs: 1}, backgroundColor: '#FFF',position: 'relative', zIndex: 1 }}>
       <Container maxWidth="xl">
         {/* Main Heading */}
         <Typography
@@ -68,50 +69,48 @@ export const HireUs: React.FC = () => {
             gap: 2,
           }}
         >
-          {services.map((service, index) => (
-            <Box
-              key={index}
-              sx={{
-                flex: 1,
-                border: '2px solid #e0e0e0',
-                borderRadius: 2,
-                p: 1,
-              }}
-            >
-              <Box
-                sx={{
-                  overflow: 'hidden',
-                  borderRadius: 2,
-                  mb: 2,
-                }}
-              >
-                <Box
-                  component="img"
-                  src={service.image}
-                  alt={service.title}
-                  sx={{
-                    width: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.3s ease-in-out',
-                    '&:hover': {
-                      transform: 'scale(1.05)',
-                    },
-                  }}
-                />
-              </Box>
-
-              {/* Logo/Icon */}
-              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
-                {service.icon}
-              </Box>
-
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
-                {service.title}
-              </Typography>
-              <Typography sx={{ textAlign: 'justify', color: '#555' }}>
-                {service.description}
-              </Typography>
-            </Box>
+         {services.map((service, index) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.2 }}
+    viewport={{ once: true }}
+    style={{ flex: 1 }}
+  >
+      <Box
+        sx={{
+          border: '2px solid #e0e0e0',
+          borderRadius: 2,
+          p: 1,
+          height: '100%',
+        }}
+      >
+        <Box
+          component="img"
+          src={service.image}
+          alt={service.title}
+          sx={{
+            width: '100%',
+            objectFit: 'cover',
+            transition: 'transform 1.3s ease-in-out',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            },
+          }}
+        />
+        {/* Logo/Icon */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+          {service.icon}
+        </Box>
+        <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: '#212121' }}>
+          {service.title}
+        </Typography>
+        <Typography sx={{ textAlign: 'justify', color: '#555' }}>
+          {service.description}
+        </Typography>
+      </Box>
+    </motion.div>
           ))}
         </Box>
       </Container>

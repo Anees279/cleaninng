@@ -10,6 +10,7 @@ import { InnovativeTeam } from "./InnovativeTeam";
 import { SubscribeSection } from "./SubscribeSection";
 import {Footer} from './Footer'
 import {Services} from './services'
+import {About} from './about'
  // Adjust path as needed
 const Roots: React.FC = () => {
   const location = useLocation(); // To access the current route
@@ -29,6 +30,7 @@ const Roots: React.FC = () => {
         <Route path="/" element={<CleaningHeroSection />} />
 
            <Route path="/service" element={<Services />} />
+           <Route path="/about" element={<About />} />
           
 
           {/* If no route matches, redirect to home */}
@@ -38,7 +40,9 @@ const Roots: React.FC = () => {
 
       {/* Only show the footer if the current route is not the home page */}
       {location.pathname !== '/service' && <HireUs />}
-        <AboutUs />
+      {location.pathname !== '/about' && <AboutUs />}
+
+
         <Clients />
         <ProjectCallToAction />
         <InnovativeTeam />

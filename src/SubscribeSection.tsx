@@ -13,8 +13,9 @@ export const SubscribeSection: React.FC = () => {
         py: 9,
         backgroundColor: '#FBE8A6',
         borderRadius: 2,
-        mt: 4,
+        // mt: 4,
         rowGap: 4,
+        position: 'relative', zIndex: 1 
       }}
     >
       <Typography

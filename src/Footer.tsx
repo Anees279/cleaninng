@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, YouTube } from '@mui/icons-material';
 
 export const Footer: React.FC = () => {
   return (
-    <Box sx={{ color: '#2C2927', py: 6, backgroundColor: '#f5f5f5' }}>
+    <Box sx={{ color: '#2C2927', py: 6, backgroundColor: '#f5f5f5',position: 'relative', zIndex: 1  }}>
       <Container maxWidth="lg">
         {/* Top Section */}
         <Box
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body2" sx={{ color: '#555' }}>
-           coptright © 2025 voxdigify.com | Powered by voxdigify.com
+           copyright © 2025 voxdigify.com | Powered by voxdigify.com
           </Typography>
         </Box>
     </Box>
