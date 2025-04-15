@@ -36,7 +36,7 @@ const CleaningHeroSection: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            height: '70vh',
+            height: '80vh',
             backdropFilter: "brightness(0.95)", // optional: makes text more readable
           }}
         >
