@@ -99,13 +99,13 @@ export const Services: React.FC = () => {
           </Box>
         </Container>
       </Box>
-      <Box sx={{ height: '50vh' }} />
+      <Box sx={{ height: '50vh', m:'0' }} />
       
             {/* Scrollable About Section */}
-            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 , }}>
              
             </Box>
-            <ServicesCard/>
+            {/* <ServicesCard/> */}
     </>
   );
 };

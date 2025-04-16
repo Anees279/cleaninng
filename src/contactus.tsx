@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
 import ResponsiveRootsBar from './component/navagationbar';
-
 import image5 from './asserts/1-20250410T042209Z-001/1/2.jpg';
-import {AboutU} from './aboutus1'
-export const About: React.FC = () => {
-  const isLargeScreen = useMediaQuery('(min-width:600px)');
+export const ContactUs: React.FC = () => {
+//   const isLargeScreen = useMediaQuery('(min-width:600px)');
 
   return (
     <>
@@ -23,12 +20,11 @@ export const About: React.FC = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           zIndex: 0,
+          m: 0,
         }}
       >
-        {/* Content above background (like nav and hero text) */}
-        <Box sx={{ zIndex: 10 }}>
+        <Box sx={{ zIndex: 1 }}>
           <ResponsiveRootsBar />
-
           <Container
             maxWidth="lg"
             sx={{
@@ -36,7 +32,6 @@ export const About: React.FC = () => {
               flexDirection: 'column',
               justifyContent: 'center',
               height: '70vh',
-            //   px: 2,
             }}
           >
             <Typography
@@ -49,7 +44,7 @@ export const About: React.FC = () => {
                 maxWidth: '1000px',
               }}
             >
-              About US
+              Contact Us
             </Typography>
 
             <Typography
@@ -70,14 +65,10 @@ export const About: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Spacer to offset full screen fixed hero */}
-      <Box sx={{ height: '50vh' }} />
-
-      {/* Scrollable About Section */}
-      <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
-       
+      {/* Instead of spacer + empty section, just give ContactU a top margin */}
+      <Box sx={{ mt: '70vh', position: 'relative', zIndex: 1 }}>
+        {/* <LocationMap /> */}
       </Box>
-      {/* <AboutU/> */}
     </>
   );
 };
