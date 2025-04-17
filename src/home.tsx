@@ -14,20 +14,28 @@ const CleaningHeroSection: React.FC = () => {
     <>
       {/* Hero Section with Background Image */}
       <Box
-        sx={{
-          backgroundImage: `url(${bgImage})`, // update the path as needed
-          position: 'fixed',
+       sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100vh',
+        zIndex: 0,
+        '&::before': {
+          content: '""',
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100vh',
+          height: '100%',
+          backgroundImage: `url(${bgImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          overflowX: 'hidden',
-          zIndex: 0,
-
-        }}
+          opacity: 0.4, // 👈 Adjust opacity here
+          zIndex: -1,
+        }
+      }}
       >
       <ResponsiveRootsBar/>
 

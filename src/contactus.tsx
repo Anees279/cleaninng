@@ -9,19 +9,28 @@ export const ContactUs: React.FC = () => {
     <>
       {/* Fixed Hero Section */}
       <Box
-        sx={{
-          position: 'fixed',
+       sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100vh',
+        zIndex: 0,
+        '&::before': {
+          content: '""',
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100vh',
+          height: '100%',
           backgroundImage: `url(${image5})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          zIndex: 0,
-          m: 0,
-        }}
+          opacity: 0.4, // 👈 Adjust opacity here
+          zIndex: -1,
+        }
+      }}
       >
         <Box sx={{ zIndex: 1 }}>
           <ResponsiveRootsBar />
@@ -58,7 +67,7 @@ export const ContactUs: React.FC = () => {
               }}
             >
               We offer a wide range of cleaning services tailored to your needs—
-              whether <span style={{ color: 'yellow' }}>for your home office, or construction site</span>,
+              whether <span style={{ color: 'red' }}>for your home office, or construction site</span>,
               let us help make your spaces cleaner, safer, and more inviting.
             </Typography>
           </Container>
