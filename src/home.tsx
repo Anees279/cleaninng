@@ -24,6 +24,7 @@ const CleaningHeroSection: React.FC = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          overflowX: 'hidden',
           zIndex: 0,
 
         }}
@@ -46,6 +47,7 @@ const CleaningHeroSection: React.FC = () => {
               fontFamily: '"DM Serif Display", serif',
               fontWeight: 900,
               color: "#212121",
+              
               fontSize: { xs: "2.5rem", sm: "4rem", md: "80px" },
               mt: { xs: 0, md: 1 },
               maxWidth: "1000px",
@@ -78,7 +80,7 @@ const CleaningHeroSection: React.FC = () => {
       <Box>
        
       </Box>
-      <Box sx={{ height: '50vh' }} />
+      <Box sx={{ height: '100vh' }} />
       
             {/* Scrollable About Section */}
             <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>

@@ -138,7 +138,7 @@ function HomeHero() {
             width: "100%",
             height: "100vh",
             backgroundColor: "#fff",
-            px: 4,
+            // px: 4,
             pt: 6,
           },
         }}

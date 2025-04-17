@@ -53,7 +53,7 @@ export const Services: React.FC = () => {
             sx={{
               fontFamily: '"DM Serif Display", serif',
               fontWeight: 900,
-              color: "black",
+             color: '#2C2927',
               fontSize: { xs: "2.5rem", sm: "4rem", md: "80px" },
               mt: { xs: 0, md: 1 },
               maxWidth: "1000px",
@@ -74,7 +74,7 @@ export const Services: React.FC = () => {
             //   ml: isLargeScreen ? "auto" : 0,
             }}
           >
-             We offer a wide range of cleaning services tailored to your needs—whether <span style={{ color: "yellow" }}>for your home office, or construction site.</span>,
+             We offer a wide range of cleaning services tailored to your needs—whether <span style={{ color: "red" }}>for your home office, or construction site.</span>,
      Let us help make your spaces cleaner, safer, and more
     inviting.
           </Typography>

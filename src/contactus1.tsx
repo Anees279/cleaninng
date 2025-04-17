@@ -27,7 +27,11 @@ export const ContactU: React.FC = () => {
             <Typography variant="h2" sx={{ mb: 2 ,
         fontFamily: '"DM Serif Display", serif', 
         fontWeight: 900,
-
+textAlign: 'left',
+fontSize: {
+  xs: 50, // for small devices
+   md:70// for medium and up
+},
             }}>We are here to help!</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 10 }}>
   <LocationOn />
