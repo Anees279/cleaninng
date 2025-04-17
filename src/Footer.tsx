@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           <Box
           sx={{textAlign: { xs: 'center', md: 'left' }, mb: 4 }}>
             <Typography><strong>1234 N Spring St, Los Angeles, CA 90012</strong></Typography>
-            <Typography><strong>mail@example.com</strong></Typography>
+            <Typography><strong>info@quickbrightcleaners.com</strong></Typography>
           </Box>
 
           {/* Links + Social Section */}
@@ -37,8 +37,15 @@ export const Footer: React.FC = () => {
               <Typography variant="body1" sx={{ mb: 2 }}>Follow us:</Typography>
               <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
                 <IconButton sx={{ color: '#2C2927' }}><Twitter /></IconButton>
-                <IconButton sx={{ color: '#2C2927' }}><Facebook /></IconButton>
-                <IconButton sx={{ color: '#2C2927' }}><Instagram /></IconButton>
+                <a href="https://www.facebook.com/quickbrightcleaners/" target="_blank" rel="noopener noreferrer">
+  <IconButton sx={{ color: '#2C2927' }}>
+    <Facebook />
+  </IconButton>
+</a>
+<a href="https://www.instagram.com/quickbrightcleaners/" target="_blank" rel="noopener noreferrer">
+<IconButton sx={{ color: '#2C2927' }}><Instagram /></IconButton>
+</a>
+               
                 <IconButton sx={{ color: '#2C2927' }}><YouTube /></IconButton>
               </Box>
             </Box>
