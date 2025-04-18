@@ -28,7 +28,6 @@ const Roots: React.FC = () => {
  
 
       
-      <ResponsiveRootsBar/>
 
       {/* Add a main content area */}
       {/* Main content area with flex-grow to push footer to the bottom when needed */}

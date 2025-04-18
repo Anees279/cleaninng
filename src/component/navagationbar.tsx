@@ -42,12 +42,14 @@ function HomeHero() {
     <Box
       sx={{
         background: `transparent`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         position: "relative",
         color: "#fff",
-        // borderRadius: 10,
+        display: "flex",               // Use flexbox to center content
+        justifyContent: "center",      // Align horizontally in center
         zIndex: 0,
+        // borderRadius: 10,
       }}
     >
       {/* Navbar */}
@@ -56,26 +58,18 @@ function HomeHero() {
         sx={{
           backgroundColor: "#fff",
           color: "black",
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: '"DM Serif Display", serif',
+          // maxWidth: "1500px",
           fontWeight: 700,
+          height: 90,
           boxShadow: "none",
+          justifyContent: "center",
         }}
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
             {/* Logo */}
-            <Box
-              component="a"
-              href="#"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                textDecoration: "none",
-                mt: 2,
-              }}
-            >
-              <img src={img} alt="Logo" style={{ height: 100, width: 200 }} />
-            </Box>
+           
 
             {/* Mobile Menu Icon */}
             <Box
@@ -107,6 +101,41 @@ function HomeHero() {
                 </Button>
               ))}
             </Box>
+            <Box
+  component="a"
+  href="#"
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    textDecoration: "none",
+    height: { xs: "50px", md: "15vh" }, // Adjust height for different screen sizes
+    backgroundColor: "#fff",
+    borderRadius: 2,
+    // Ensure responsive behavior for the logo container
+  }}
+>
+  <Box
+    sx={{
+      // For small screens, reduce size
+      "@media (max-width: 600px)": {
+        height: "100%", // Decrease height on smaller screens
+      },
+      // For larger screens, maintain a larger size
+      "@media (min-width: 600px)": {
+        height: "100%", // Adjust for medium and larger screens
+      },
+    }}
+  >
+    <img
+      src={img}
+      alt="Logo"
+      style={{
+        width: "auto", // Ensures the logo maintains its aspect ratio
+        height: "100%", // Makes the logo fit within the Box height while maintaining aspect ratio
+      }}
+    />
+  </Box>
+</Box>
 
             {/* Get Quote button for large screens */}
             <Box sx={{ display: { xs: "none", md: "block" } }}>

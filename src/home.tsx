@@ -11,9 +11,11 @@ import {
   MenuItem,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ResponsiveRootsBar from './component/navagationbar'; 
+
 
 import CleaningForm from "./component/cleaningfrom";
-import bgImage from "./asserts/1-20250410T042209Z-001/1/3.jpg";
+import bgImage from "./asserts/1-20250410T042209Z-001/1/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.jpg";
 import { color } from "framer-motion";
 
 const CleaningHeroSection: React.FC = () => {
@@ -25,12 +27,12 @@ const CleaningHeroSection: React.FC = () => {
       {/* Hero Section with Background Image */}
       <Box
         sx={{
-          position: "relative",
+          position: "fixed",
           top: 0,
           left: 0,
           width: '100%',
           height: 'auto',
-          paddingTop: { xs: 0, md: 12 },
+          paddingTop: { xs: 0, md: 3.2 },
           zIndex: 0,
           '&::before': {
             position: 'absolute',
@@ -43,13 +45,16 @@ const CleaningHeroSection: React.FC = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.4, // 👈 Adjust opacity here
+            // opacity: 0.9, // 👈 Adjust opacity here
             zIndex: -1,
               px: 0 
 
           }
         }}
       >
+        <ResponsiveRootsBar />
+
+        {/* Content above background (like nav and hero text) */}
         <Container maxWidth="xl" >
           <Box
             sx={{
@@ -123,7 +128,7 @@ const CleaningHeroSection: React.FC = () => {
     animation: "bounce 1s infinite",
   }}
 >
-  <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "#008080" }} />
+  <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "red" }} />
 </Box>
 
             </Box> {/* Closing the unclosed Box */}
@@ -133,6 +138,12 @@ const CleaningHeroSection: React.FC = () => {
           </Box>
         </Container>
       </Box>
+       <Box sx={{ height: {xs:'50vh' ,md: '80vh'}}} />
+      
+            {/* Scrollable About Section */}
+            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+             
+            </Box>
     </>
   );
 };
