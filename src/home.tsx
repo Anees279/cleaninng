@@ -45,7 +45,7 @@ const CleaningHeroSection: React.FC = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            // opacity: 0.9, // 👈 Adjust opacity here
+            opacity: 0.7, // 👈 Adjust opacity here
             zIndex: -1,
               px: 0 
 
