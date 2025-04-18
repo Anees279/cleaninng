@@ -63,7 +63,7 @@ export const InnovativeTeam: React.FC = () => {
               sx={{
                 flex: '1 1 30%',
                 maxWidth: { xs: '100%', sm: '48%', md: '22%' },
-                height: { xs: '250px' ,md: 'auto' },
+                height: 'auto',
                 objectFit: 'object-cover',
                 borderRadius: 2,
                 boxShadow: 2,
