@@ -53,9 +53,10 @@ export const HireUs: React.FC = () => {
           sx={{
             textAlign: 'left',
             fontWeight: 700,
-            mb: 6,
+            mb: 3,
             fontFamily: '"DM Serif Display", serif',
             color: '#424242',
+            fontSize: { xs: '2.7rem', md: '50px' },
           }}
         >
           Our Services

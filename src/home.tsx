@@ -1,10 +1,20 @@
 
 import React from "react";
-import { Container, Typography, useMediaQuery, useTheme, Box } from "@mui/material";
-import ResponsiveRootsBar from './component/navagationbar'; 
+import {
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Box,
+  TextField,
+  Button,
+  MenuItem,
+} from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+import CleaningForm from "./component/cleaningfrom";
 import bgImage from "./asserts/1-20250410T042209Z-001/1/3.jpg";
-
+import { color } from "framer-motion";
 
 const CleaningHeroSection: React.FC = () => {
   const theme = useTheme();
@@ -14,86 +24,115 @@ const CleaningHeroSection: React.FC = () => {
     <>
       {/* Hero Section with Background Image */}
       <Box
-       sx={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100vh',
-        zIndex: 0,
-        '&::before': {
-          content: '""',
-          position: 'absolute',
+        sx={{
+          position: "relative",
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.4, // 👈 Adjust opacity here
-          zIndex: -1,
-        }
-      }}
+          height: 'auto',
+          paddingTop: { xs: 0, md: 12 },
+          zIndex: 0,
+          '&::before': {
+            position: 'absolute',
+            content: '""',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: {xs: "100%", md: "100%"},
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.4, // 👈 Adjust opacity here
+            zIndex: -1,
+              px: 0 
+
+          }
+        }}
       >
-      <ResponsiveRootsBar/>
-
-        <Container
-          maxWidth="xl"
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            height: '80vh',
-            backdropFilter: "brightness(0.95)", // optional: makes text more readable
-          }}
-        >
-
-          <Typography
+        <Container maxWidth="xl" >
+          <Box
             sx={{
-              fontFamily: '"DM Serif Display", serif',
-              fontWeight: 900,
-              color: "#212121",
-              
-              fontSize: { xs: "2.5rem", sm: "4rem", md: "80px" },
-              mt: { xs: 0, md: 1 },
-              maxWidth: "1000px",
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 0,
+              overflow: "hidden",
+              padding: { xs: 0, md: 4 },
             }}
           >
-            Residential & commercial cleaning services that you can trust.
-          </Typography>
+            {/* Left Side Text */}
+            <Box sx={{ flex: 1, textAlign: { xs: "justify", md: "center" } }}>
+              <Typography
+                sx={{
+                  fontFamily: '"DM Serif Display", serif',
+                  fontWeight: 900,
+                  color: "#008080",
+                  fontSize: { xs: "1.5rem", sm: "4rem", md: "52px" },
+                  maxWidth: "900px",
+                  textAlign: { xs: "center", md: "left" },
 
-          <Typography
-            variant="h6"
-            component="p"
-            sx={{
-              color: "#212121",
-              textAlign: "justify",
-              lineHeight: 1.8,
-              maxWidth: "600px",
-              ml: isLargeScreen ? "auto" : 0,
-            }}
-          >
-            We take pride in delivering top-quality cleaning services tailored to
-            meet your needs. Whether it’s industrial facilities, residential
-            spaces, or garden areas, our professional team ensures every corner is
-            spotless. With attention to detail and a commitment to excellence, we
-            create clean, safe, and welcoming environments.
-          </Typography>
+                }}
+              >
+                Residential <span style={{ color: "red" }}>&</span> Commercial
+                cleaning services that you can trust.
+              </Typography>
+
+              <Typography
+                variant="h6"
+                component="p"
+                sx={{
+                  color: "black",
+                  textAlign: { xs: "justify", md: "left" },
+                  lineHeight: 1.7,
+                  maxWidth: "900px",
+                  mt: 2,
+                  fontFamily: '"DM Serif Display", serif',
+
+                }}
+              >
+                We take pride in delivering top-quality cleaning services
+                tailored to meet your needs. <span style={{ color: "red" }}>Whether it’s industrial facilities,
+                residential spaces, or garden areas,</span> our professional team ensures
+                every corner is spotless. With attention to detail and a
+                commitment to excellence, we create clean, safe, and welcoming
+                environments.
+              </Typography>
+              <style>
+  {`
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(10px);
+      }
+      60% {
+        transform: translateY(5px);
+      }
+    }
+  `}
+</style>
+
+              <Box
+  sx={{
+    display: "flex",
+    justifyContent: { xs: "center", md: "center" },
+    mt: {xs: 8, md: 18 },
+    animation: "bounce 1s infinite",
+  }}
+>
+  <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "#008080" }} />
+</Box>
+
+            </Box> {/* Closing the unclosed Box */}
+
+            {/* Right Side Form */}
+            <CleaningForm />
+          </Box>
         </Container>
       </Box>
-
-      {/* Remaining Sections */}
-      <Box>
-       
-      </Box>
-      <Box sx={{ height: '100vh' }} />
-      
-            {/* Scrollable About Section */}
-            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
-             
-            </Box>
     </>
   );
 };

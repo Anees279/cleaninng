@@ -31,7 +31,10 @@ export const ProjectCallToAction: React.FC = () => {
                 fontWeight: 700,
                 mb: 2,
                 fontFamily: '"DM Serif Display", serif',
-                color: '#333',
+                color: '#008080',
+
+              fontSize: { xs: '2rem', md: '50px' },
+
               }}
             >
               Need Professional Cleaning?
@@ -47,9 +50,17 @@ export const ProjectCallToAction: React.FC = () => {
             >
               Whether it's your home, office, or construction site, we provide top-notch cleaning services tailored to your needs. Let’s discuss how we can make your space spotless.
             </Typography>
-            <Button variant="contained" color="primary" size="large" sx={{ mt: 6 }}>
-              Connect with Us
-            </Button>
+            <a
+  href="https://wa.me/+971 56 502 1171" // replace with your full WhatsApp number (with country code, no + or dashes)
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none" }}
+>
+  <Button variant="contained" color="primary" size="large" sx={{ mt: 6 }}>
+    Connect with Us
+  </Button>
+</a>
+
           </Box>
 
           {/* Image Section */}
@@ -82,7 +93,9 @@ export const ProjectCallToAction: React.FC = () => {
             sx={{
               fontWeight: 700,
               fontFamily: '"DM Serif Display", serif',
-              color: '#FFF9C4',
+              fontSize: { xs: '2rem', md: '50px' },
+              color: 'red',
+
             }}
           >
             Let Us Make Your Space Shine

@@ -54,7 +54,7 @@ function HomeHero() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          backgroundColor: "#fff",
           color: "black",
           fontFamily: "Poppins, sans-serif",
           fontWeight: 700,
@@ -178,6 +178,8 @@ function HomeHero() {
           >
             Get Quote
           </Button>
+          <Box>
+          </Box>
         </Box>
       </Drawer>
 

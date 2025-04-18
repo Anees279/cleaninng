@@ -3,6 +3,7 @@ import { Box, Typography, Container } from '@mui/material';
 import image1 from './asserts/2-20250410T042223Z-001/2/1.jpg';
 import image2 from './asserts/2-20250410T042223Z-001/2/2.jpg';
 import image3 from './asserts/2-20250410T042223Z-001/2/3.jpg';
+import image4 from './asserts/2-20250410T042223Z-001/2/1.jpg';
 
 export const InnovativeTeam: React.FC = () => {
   return (
@@ -23,7 +24,8 @@ export const InnovativeTeam: React.FC = () => {
             sx={{
               fontWeight: 700,
               fontFamily: '"DM Serif Display", serif',
-              color: '#2C2927',
+              color: '#008080',
+              fontSize: { xs: '2rem', md: '50px' },
             }}
           >
             Dedicated Cleaning Experts with a Passion for Sparkle
@@ -52,7 +54,7 @@ export const InnovativeTeam: React.FC = () => {
             gap: 4,
           }}
         >
-          {[image1, image2, image3].map((img, index) => (
+          {[image1, image2, image3,image4].map((img, index) => (
             <Box
               key={index}
               component="img"
@@ -60,9 +62,9 @@ export const InnovativeTeam: React.FC = () => {
               alt={`Team at work ${index + 1}`}
               sx={{
                 flex: '1 1 30%',
-                maxWidth: { xs: '100%', sm: '48%', md: '30%' },
-                height: 'auto',
-                objectFit: 'cover',
+                maxWidth: { xs: '100%', sm: '48%', md: '22%' },
+                height: { xs: '250px' ,md: 'auto' },
+                objectFit: 'object-cover',
                 borderRadius: 2,
                 boxShadow: 2,
                 transition: 'transform 0.3s ease-in-out',

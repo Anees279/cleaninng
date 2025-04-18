@@ -2,10 +2,10 @@ import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 
 // Import your logo images from local assets
-import logo1 from './asserts/client-logo-1.webp';
-import logo2 from './asserts/client-logo-2.webp';
-import logo3 from './asserts/logo-black.svg';
-import logo4 from './asserts/client-logo-5.webp';
+import logo1 from './asserts/download (1).jpg';
+import logo2 from './asserts/download.jpg';
+import logo3 from './asserts/download (1).png';
+import logo4 from './asserts/download.png';
 
 const clientLogos = [logo1, logo2, logo3, logo4];
 
@@ -20,7 +20,8 @@ export const Clients: React.FC = () => {
             textAlign: 'center',
             fontWeight: 700,
             fontFamily: '"DM Serif Display", serif',
-            color: '#424242',
+            color: '#806768',
+            fontSize: { xs: '2.5rem', md: '50px' },
           }}
         >
           Clients We’ve Worked With
@@ -59,7 +60,8 @@ export const Clients: React.FC = () => {
               fontWeight: 700,
               mb: 2,
               fontFamily: '"DM Serif Display", serif',
-              color: '#424242',
+              color: 'black',
+              fontSize: { xs: '2rem', md: '50px' },
             }}
           >
             Why Choose Us?

@@ -15,6 +15,7 @@ import {ContactUs} from './contactus'
 import { ContactU } from './contactus1';
 import { ServicesCard } from './Servicecard';
 import LocationMap from './locution'; // Adjust path as needed
+import WhatsAppButton from "./component/whatappbutton";
 
  // Adjust path as needed
 const Roots: React.FC = () => {
@@ -27,6 +28,7 @@ const Roots: React.FC = () => {
  
 
       
+      <ResponsiveRootsBar/>
 
       {/* Add a main content area */}
       {/* Main content area with flex-grow to push footer to the bottom when needed */}
@@ -57,7 +59,7 @@ const Roots: React.FC = () => {
 
       {/* {location.pathname == '/contact' && <ContactU  />} */}
         <Clients />
-
+        <WhatsAppButton phoneNumber="+971 56 502 1171" message="Hello, I need help with your services!" />
         <ProjectCallToAction />
         <InnovativeTeam />
         <SubscribeSection />

@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
           {/* Address Section */}
           <Box
           sx={{textAlign: { xs: 'center', md: 'left' }, mb: 4 }}>
-            <Typography><strong>1234 N Spring St, Los Angeles, CA 90012</strong></Typography>
+            <Typography><strong>Address:Mussafah 26 Abu Dhabi, UAE</strong></Typography>
             <Typography><strong>info@quickbrightcleaners.com</strong></Typography>
           </Box>
 

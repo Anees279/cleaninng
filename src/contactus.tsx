@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
-import ResponsiveRootsBar from './component/navagationbar';
 import image5 from './asserts/1-20250410T042209Z-001/1/2.jpg';
 export const ContactUs: React.FC = () => {
 //   const isLargeScreen = useMediaQuery('(min-width:600px)');
@@ -33,7 +32,6 @@ export const ContactUs: React.FC = () => {
       }}
       >
         <Box sx={{ zIndex: 1 }}>
-          <ResponsiveRootsBar />
           <Container
             maxWidth="lg"
             sx={{
