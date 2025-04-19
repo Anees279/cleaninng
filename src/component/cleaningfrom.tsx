@@ -82,14 +82,17 @@ const CleaningForm = () => {
     <Box
       sx={{
         flex: 1,
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
-        p: 4,
-        borderRadius: 2,
-        boxShadow: 3,
-        maxWidth: "400px",
-        width: "100%",
-        mt: { xs: 2, md: 0 },
-        display: { xs: "none", md: "block" },
+  backgroundColor: "rgba(255, 255, 255, 0.9)",
+  p: 4,
+  borderRadius: 2,
+  boxShadow: 3,
+  maxWidth: "400px",
+  width: "100%",
+  mt: { xs: 2, md: 0 },
+  mb: { xs: 2, md: 0 }, // negative margin pushes it into the next section
+  display: { xs: "none", md: "block" },
+  position: "relative", // key to allow overlap
+  zIndex: 10,         
       }}
     >
       <Typography

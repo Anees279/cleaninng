@@ -45,7 +45,7 @@ export const HireUs: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: {md:10 , xs: 1}, backgroundColor: '#FFF',position: 'relative', zIndex: 1 }}>
+    <Box sx={{ py: {md:5 , xs: 1}, backgroundColor: '#FFF',position: 'relative', zIndex: 1 }}>
       <Container maxWidth="xl">
         {/* Main Heading */}
         <Typography

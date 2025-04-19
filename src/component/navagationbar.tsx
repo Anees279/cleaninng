@@ -60,7 +60,7 @@ function HomeHero() {
           color: "black",
           fontFamily: '"DM Serif Display", serif',
           // maxWidth: "1500px",
-          fontWeight: 700,
+          fontWeight: 900,
           height: 90,
           boxShadow: "none",
           justifyContent: "center",

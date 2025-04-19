@@ -33,6 +33,8 @@ const CleaningHeroSection: React.FC = () => {
           width: '100%',
           height: 'auto',
           paddingTop: { xs: 0, md: 3.2 },
+          justifyContent: "center",
+          alignItems: "center",
           zIndex: 0,
           '&::before': {
             position: 'absolute',
@@ -43,7 +45,11 @@ const CleaningHeroSection: React.FC = () => {
             height: {xs: "100%", md: "100%"},
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            objectFit: 'cover',
+            backgroundPosition: {
+              xs: 'center',      // for small devices (xs)
+              md: 'top center',  // for medium and up (md+)
+            },
             backgroundRepeat: 'no-repeat',
             opacity: 0.7, // 👈 Adjust opacity here
             zIndex: -1,
@@ -75,7 +81,7 @@ const CleaningHeroSection: React.FC = () => {
                   fontWeight: 900,
                   color: "#008080",
                   fontSize: { xs: "1.5rem", sm: "4rem", md: "52px" },
-                  maxWidth: "900px",
+                  maxWidth: "650px",
                   textAlign: { xs: "center", md: "left" },
 
                 }}
@@ -91,7 +97,7 @@ const CleaningHeroSection: React.FC = () => {
                   color: "black",
                   textAlign: { xs: "justify", md: "left" },
                   lineHeight: 1.7,
-                  maxWidth: "900px",
+                  maxWidth: "700px",
                   mt: 2,
                   fontFamily: '"DM Serif Display", serif',
 
@@ -102,7 +108,6 @@ const CleaningHeroSection: React.FC = () => {
                 residential spaces, or garden areas,</span> our professional team ensures
                 every corner is spotless. With attention to detail and a
                 commitment to excellence, we create clean, safe, and welcoming
-                environments.
               </Typography>
               <style>
   {`
@@ -124,7 +129,7 @@ const CleaningHeroSection: React.FC = () => {
   sx={{
     display: "flex",
     justifyContent: { xs: "center", md: "center" },
-    mt: {xs: 8, md: 18 },
+    mt: {xs: 5, md: 8 },
     animation: "bounce 1s infinite",
   }}
 >
@@ -138,7 +143,7 @@ const CleaningHeroSection: React.FC = () => {
           </Box>
         </Container>
       </Box>
-       <Box sx={{ height: {xs:'50vh' ,md: '80vh'}}} />
+       <Box sx={{ height: {xs:'40vh' ,md: '60vh'}}} />
       
             {/* Scrollable About Section */}
             <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
