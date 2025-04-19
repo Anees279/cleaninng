@@ -27,7 +27,7 @@ const CleaningHeroSection: React.FC = () => {
       {/* Hero Section with Background Image */}
       <Box
         sx={{
-          position: "fixed",
+          position: "relative",
           top: 0,
           left: 0,
           width: '100%',
@@ -143,12 +143,12 @@ const CleaningHeroSection: React.FC = () => {
           </Box>
         </Container>
       </Box>
-       <Box sx={{ height: {xs:'40vh' ,md: '60vh'}}} />
+       {/* <Box sx={{ height: {xs:'40vh' ,md: '50vh'}}} /> */}
       
             {/* Scrollable About Section */}
-            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+            {/* <Box sx={{ py: 18, backgroundColor: 'red', position: 'relative', zIndex: 0 }}> */}
              
-            </Box>
+            {/* </Box> */}
     </>
   );
 };
