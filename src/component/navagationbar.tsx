@@ -46,7 +46,7 @@ function HomeHero() {
         backgroundPosition: "center",
         position: "relative",
         color: "#fff",
-        display: "flex",               // Use flexbox to center content
+        display: "flex", 
         justifyContent: "center",      // Align horizontally in center
         zIndex: 0,
         // borderRadius: 10,
@@ -56,10 +56,12 @@ function HomeHero() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#fff",
+          backgroundColor: "#008080",
           color: "black",
           fontFamily: '"DM Serif Display", serif',
           // maxWidth: "1500px",
+        padding:0,              // Use flexbox to center content
+
           fontWeight: 900,
           height: 90,
           boxShadow: "none",
@@ -108,7 +110,7 @@ function HomeHero() {
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
-    height: { xs: "50px", md: "15vh" }, // Adjust height for different screen sizes
+    height: { xs: "50px", md: "13vh" }, // Adjust height for different screen sizes
     backgroundColor: "#fff",
     borderRadius: 2,
     // Ensure responsive behavior for the logo container
@@ -131,7 +133,9 @@ function HomeHero() {
       alt="Logo"
       style={{
         width: "auto", // Ensures the logo maintains its aspect ratio
-        height: "100%", // Makes the logo fit within the Box height while maintaining aspect ratio
+        height: "100%",
+        border:'2px solid #008080',
+        borderRadius:7 // Makes the logo fit within the Box height while maintaining aspect ratio
       }}
     />
   </Box>
@@ -168,7 +172,7 @@ function HomeHero() {
             height: "100vh",
             backgroundColor: "#fff",
             // px: 4,
-            pt: 6,
+            // pt: 6,
           },
         }}
       >
@@ -201,7 +205,7 @@ function HomeHero() {
             sx={{
               backgroundColor: grey[800],
               "&:hover": { backgroundColor: grey[900] },
-              mt: 3,
+              // mt: 3,
               width: "100%",
             }}
           >

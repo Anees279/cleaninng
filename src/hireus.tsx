@@ -45,7 +45,7 @@ export const HireUs: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: {md:5 , xs: 1}, backgroundColor: '#FFF',position: 'relative', zIndex: 1 }}>
+    <Box sx={{ py: {md:5 , xs: 1}, backgroundColor: '#FFF',position: 'relative', zIndex: 1 , textAlign: 'center'}}>
       <Container maxWidth="xl">
         {/* Main Heading */}
         <Typography
@@ -56,7 +56,7 @@ export const HireUs: React.FC = () => {
             mb: 3,
             fontFamily: '"DM Serif Display", serif',
             color: '#424242',
-            fontSize: { xs: '2.7rem', md: '50px' },
+            fontSize: { xs: '2rem', md: '50px' },
           }}
         >
           Our Services

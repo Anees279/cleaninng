@@ -17,11 +17,13 @@ export const Clients: React.FC = () => {
         <Typography
           variant="h3"
           sx={{
-            textAlign: 'center',
+            textAlign: { xs: 'left', md: 'center' },
             fontWeight: 700,
             fontFamily: '"DM Serif Display", serif',
-            color: '#806768',
-            fontSize: { xs: '2.5rem', md: '50px' },
+            color: '#008080',
+            mb: 3,
+            fontSize: { xs: '1.7rem', md: '50px' },
+
           }}
         >
           Clients We’ve Worked With
@@ -62,6 +64,7 @@ export const Clients: React.FC = () => {
               fontFamily: '"DM Serif Display", serif',
               color: 'black',
               fontSize: { xs: '2rem', md: '50px' },
+
             }}
           >
             Why Choose Us?

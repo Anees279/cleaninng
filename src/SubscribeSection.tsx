@@ -23,7 +23,8 @@ export const SubscribeSection: React.FC = () => {
   sx={{
     fontWeight: 700,
     fontFamily: '"DM Serif Display", serif',
-    color: '#2C2927',
+    color: '#008080',
+    fontSize: { xs: '2rem', md: '50px' },
   }}
 >
   Subscribe
