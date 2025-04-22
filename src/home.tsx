@@ -32,7 +32,7 @@ const CleaningHeroSection: React.FC = () => {
           left: 0,
           width: '100%',
           height: 'auto',
-          paddingTop: { xs: 0, md: 4.2 },
+          paddingTop: { xs: 0, md: 2.2 },
           justifyContent: "center",
           alignItems: "center",
           zIndex: 0,

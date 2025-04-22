@@ -18,6 +18,7 @@ export const About: React.FC = () => {
           left: 0,
           width: '100%',
           height: '100vh',
+          paddingTop: { xs: 0, md: 2.2 },
           zIndex: 0,
           '&::before': {
             content: '""',

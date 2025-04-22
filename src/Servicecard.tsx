@@ -255,22 +255,26 @@ export const ServicesCard: React.FC = () => {
         </Typography>
 
         {/* Services Boxes */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            gap: 2,
-          }}
-        >
-         {services.map((service, index) => (
-  <motion.div
-    key={index}
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.2 }}
-    viewport={{ once: true }}
-    style={{ flex: 1 }}
-  >
+        {/* Services Grid */}
+<Box
+  sx={{
+    display: 'grid',
+    gridTemplateColumns: {
+      xs: '1fr',
+      sm: '1fr 1fr',
+      md: '1fr 1fr 1fr 1fr',
+    },
+    gap: 3,
+  }}
+>
+  {services.map((service, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
+    >
       <Box
         sx={{
           border: '2px solid #e0e0e0',
@@ -292,7 +296,7 @@ export const ServicesCard: React.FC = () => {
             },
           }}
         />
-        {/* Logo/Icon */}
+        {/* Icon */}
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
           {service.icon}
         </Box>
@@ -304,8 +308,9 @@ export const ServicesCard: React.FC = () => {
         </Typography>
       </Box>
     </motion.div>
-          ))}
-        </Box>
+  ))}
+</Box>
+
       </Container>
     </Box>
   );

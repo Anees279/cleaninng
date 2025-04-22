@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
 import image5 from './asserts/1-20250410T042209Z-001/1/2.jpg';
+import ResponsiveRootsBar from './component/navagationbar';
+
 export const ContactUs: React.FC = () => {
 //   const isLargeScreen = useMediaQuery('(min-width:600px)');
 
@@ -14,6 +16,7 @@ export const ContactUs: React.FC = () => {
         left: 0,
         width: '100%',
         height: '100vh',
+        paddingTop: { xs: 0, md: 2.2 },
         zIndex: 0,
         '&::before': {
           content: '""',
@@ -30,7 +33,10 @@ export const ContactUs: React.FC = () => {
           zIndex: -1,
         }
       }}
+
       >
+      <ResponsiveRootsBar/>
+
         <Box sx={{ zIndex: 1 }}>
           <Container
             maxWidth="lg"
