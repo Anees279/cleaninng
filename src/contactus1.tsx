@@ -35,12 +35,12 @@ fontSize: {
             }}>We are here to help!</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 10 }}>
   <LocationOn />
-  <Typography><strong>1234 N Spring St, Los Angeles, CA 90012</strong></Typography>
+  <Typography><strong>Mussafah 26 Abu Dhabi, UAE</strong></Typography>
 </Box>
 
 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 5 }}>
   <Phone />
-  <Typography><strong>+1 234 567 890</strong></Typography>
+  <Typography><strong>+1971565021171</strong></Typography>
 </Box>
             
             <Box sx={{ mt: 2 }}>

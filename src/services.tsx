@@ -23,7 +23,7 @@ export const Services: React.FC = () => {
       {/* Hero Section */}
       <Box
        sx={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
         width: '100%',

@@ -27,7 +27,7 @@ const CleaningHeroSection: React.FC = () => {
       {/* Hero Section with Background Image */}
       <Box
         sx={{
-          position: "fixed",
+          position: "absolute",
           top: 0,
           left: 0,
           width: '100%',

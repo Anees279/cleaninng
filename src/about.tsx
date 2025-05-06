@@ -13,7 +13,7 @@ export const About: React.FC = () => {
       {/* Fixed Hero Section */}
       <Box
         sx={{
-          position: 'fixed',
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',

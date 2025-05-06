@@ -1,18 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.67e7cc3d.js",
+    "main.js": "/static/js/main.4f0361de.js",
     "static/media/2.jpg": "/static/media/2.361007137eb0f5cb18fa.jpg",
     "static/media/1.jpg": "/static/media/1.387bbca4f82dd842574d.jpg",
     "static/media/3.jpg": "/static/media/3.55c443f10557ba1f6d1f.jpg",
-    "static/media/logo.png": "/static/media/logo.21805ae61acb4faf9448.png",
-    "static/media/logo-black.svg": "/static/media/logo-black.9e51f525bff64c8bb82d9e54393aee30.svg",
-    "static/media/client-logo-5.webp": "/static/media/client-logo-5.f42dc191846bfd8f187a.webp",
-    "static/media/client-logo-1.webp": "/static/media/client-logo-1.efc654727dafe1d8cbcc.webp",
-    "static/media/client-logo-2.webp": "/static/media/client-logo-2.7ebd180d2fd081adb3ba.webp",
+    "static/media/logo.png": "/static/media/logo.a327d0efe69ebeaab7db.png",
+    "static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.jpg": "/static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.0298bda58d32f079e4f4.jpg",
     "index.html": "/index.html",
-    "main.67e7cc3d.js.map": "/static/js/main.67e7cc3d.js.map"
+    "main.4f0361de.js.map": "/static/js/main.4f0361de.js.map"
   },
   "entrypoints": [
-    "static/js/main.67e7cc3d.js"
+    "static/js/main.4f0361de.js"
   ]
 }

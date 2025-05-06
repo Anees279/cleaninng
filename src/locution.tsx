@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 const LocationMap: React.FC = () => {
   return (
-    <Box sx={{ 
+    <Box
+      sx={{
         backgroundColor: '#FFF9C4',
         position: 'relative',
-
-     }}>
-      
+      }}
+    >
       <Box
         sx={{
           width: '100%',
@@ -18,8 +18,8 @@ const LocationMap: React.FC = () => {
         }}
       >
         <iframe
-          title="1234 N Spring St, Los Angeles, CA"
-          src="https://www.google.com/maps?q=1234+N+Spring+St,+Los+Angeles,+CA+90012&output=embed"
+          title="Mussafah 26, Abu Dhabi, UAE"
+          src="https://www.google.com/maps?q=Mussafah+26,+Abu+Dhabi,+UAE&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}
