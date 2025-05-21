@@ -1,137 +1,230 @@
 
-import React from 'react';
-import { Box, Typography, Container, useMediaQuery, colors } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import BusinessIcon from '@mui/icons-material/Business';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import React from "react";
+import {
+  Box,
+  Typography,
+  useTheme,
+  useMediaQuery,
+  Container,
+  Button,
+} from "@mui/material";
+import serviceIcon from "./asserts/icon/Icon3.png";
+import icon from "./asserts/icon/Icon.png";
 
-import ResponsiveRootsBar from './component/navagationbar';
+const Services: React.FC = () => {
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
-
-
-import image5 from './asserts/1-20250410T042209Z-001/1/2.jpg';
-
-import { ServicesCard } from './Servicecard';
-import { color } from 'framer-motion';
-export const Services: React.FC = () => {
-  const isLargeScreen = useMediaQuery('(min-width:600px)');
-
-  
+  const services = [
+    {
+      title: "Office Cleaning",
+      description:
+        "We provide thorough cleaning services tailored for your home, ensuring every corner is spotless and fresh.",
+    },
+    {
+      title: "House Cleaning",
+      description:
+        "Professional cleaning solutions for offices, buildings, and commercial spaces to maintain a healthy environment.",
+    },
+    {
+      title: "Carpet Cleaning",
+      description:
+        "Post-construction cleanup services to prepare your site for final presentation or occupancy.",
+    },
+    {
+      title: "Kitchen Cleaning",
+      description:
+        "Post-construction cleanup services to prepare your site for final presentation or occupancy.",
+    },
+  ];
 
   return (
-    <>
-      {/* Hero Section */}
-      <Box
-       sx={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100vh',
-        paddingTop: { xs: 0, md: 2.2 },
-
-        zIndex: 0,
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundImage: `url(${image5})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.4, // 👈 Adjust opacity here
-          zIndex: -1,
-        }
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: "#FFF",
+        py: { xs: 4, md: 8 },
       }}
-      >
-      <ResponsiveRootsBar/>
-
-        <Container
-          maxWidth="lg"
+    >
+      <Container maxWidth="xl">
+        {/* Header */}
+        <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            paddingTop: { xs: 0, md: 12 },
-            height: {
-                xs: '70vh',             // small screens
-                md: 'calc(50vh - 64px)' // medium and above
-              },
-            // backdropFilter: "brightness(0.9)", // optional: makes text more readable
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: { xs: "flex-start", md: "center" },
+            mb: 5,
+            gap: 2,
           }}
         >
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                component="img"
+                src={icon}
+                alt="Service Icon"
+                sx={{ width: 24, height: 24 }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: '"Titan One", sans-serif',
+                  fontWeight: "bold",
+                  color: "#D9315A",
+                  fontSize: 17,
+                }}
+              >
+                Our Services
+              </Typography>
+            </Box>
 
-          <Typography
-            sx={{
-              fontFamily: '"DM Serif Display", serif',
-              fontWeight: 900,
-             color: '#008080',
-              fontSize: { xs: "2.5rem", sm: "4rem", md: "70px" },
-              mt: { xs: 0, md: 1 },
-              // maxWidth: "1000px",
-              textAlign: { xs: "center", md: "center" },
-            }}
-          >
-            {/* Cleaning, Customized for You */}
-            Our Services
-          </Typography>
+            <Typography
+              sx={{
+                fontFamily: "Urbanist",
+                fontWeight: 400,
+                color: "#008080",
+                fontSize: { xs: 30, md: 46 },
+                mt: 2,
+              }}
+            >
+              Services We Provide
+            </Typography>
 
-          <Typography
-            variant="h6"
-            component="p"
-            sx={{
-              color: "black",
-              textAlign: "center",
-              lineHeight: 1.8,
-              alignItems: "center",
-              // maxWidth: "700px",
-            //   ml: isLargeScreen ? "auto" : 0,
-            }}
-          >
-             We are committed to the best quality in <span style={{ color: "red" }}>industrial cleaning, residential cleaning, and garden cleaning</span> .
-             Soft padding is not comfortable; unless it carries structure, it is just weakly supported and lacking flow.
-          </Typography>
-          <style>
-  {`
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(10px);
-      }
-      60% {
-        transform: translateY(5px);
-      }
-    }
-  `}
-</style>
+            <Typography
+              sx={{
+                fontFamily: "DM Sans",
+                fontSize: 16,
+                color: "#7F8490",
+                lineHeight: 1.7,
+                mt: 2,
+                textAlign: "justify",
+                maxWidth: 600,
+              }}
+            >
+              We provide thorough cleaning services tailored for your home,
+              ensuring every corner is spotless and fresh.
+            </Typography>
+          </Box>
 
+          {isMdUp && (
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#0E5C67",
+                fontSize: "12px",
+                width: 123,
+                height: 42,
+                borderRadius: "30px",
+                alignSelf: "flex-start",
+                "&:hover": { backgroundColor: "#0E5C67" },
+              }}
+            >
+              All Services
+            </Button>
+          )}
+        </Box>
+
+        {/* Services Grid */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            flexWrap: { xs: "wrap", md: "nowrap" },
+            gap: { xs: 4, md: 2 },
+            justifyContent: { xs: "center", md: "space-between" },
+            alignItems: "start",
+          }}
+        >
+          {services.map((service, index) => (
+            <Box
+              key={index}
+              sx={{
+                position: "relative",
+                borderRadius: 3,
+                p: { xs: 2, md: 2 },
+                flex: { xs: "1 1 100%", sm: "1 1 45%", md: "1 1 23%" },
+                minHeight: 280,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <Box>
+                <Box
+                  component="img"
+                  src={serviceIcon}
+                  alt="Service Icon"
+                  sx={{
+                    position: "absolute",
+                    top: { xs: 0, md: 24 },
+                    left: { xs: "2", md: 0 },
+                    width: 84,
+                    height: 65,
+                  }}
+                />
+                <Box sx={{ mt: 12 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 400,
+                      color: "#008080",
+                      mb: 1.5,
+                      fontSize: 22,
+                      fontFamily: "Urbanist",
+                    }}
+                  >
+                    {service.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#555",
+                      fontSize: 15,
+                      lineHeight: 1.6,
+                      fontFamily: "DM Sans",
+                    }}
+                  >
+                    {service.description}
+                  </Typography>
+                </Box>
+              </Box>
+
+              {/* Learn More Button at bottom right */}
               <Box
   sx={{
     display: "flex",
-    justifyContent: { xs: "center", md: "center" },
-    mt: {xs: 5, md: 15 },
-    animation: "bounce 1s infinite",
+    justifyContent: "flex-start",
+    ml: 0, // Make sure there's no left margin
+    pl: 0, // Also remove left padding if any
   }}
 >
-  <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "red" }} />
+  <Button
+    variant="outlined"
+    sx={{
+      fontSize: 14,
+      textTransform: "none",
+      color: "#EE7F50",
+      border: ".5px solid #EE7F50",
+      px: 2, // Optional: remove horizontal padding from button if needed
+      "&:hover": {
+        border: "2px solid #008080",
+      },
+    }}
+  >
+    Learn More
+  </Button>
 </Box>
-        </Container>
-      </Box>
-    
-      {/* Services Section */}
-     
-       <Box sx={{ height:{xs:'70vh' , md: '60vh'} }} />
-      
-            {/* Scrollable About Section */}
-            {/* <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 , }}> */}
-             
-            {/* </Box> */} 
-            {/* <ServicesCard/> */}
-    </>
+            </Box>
+          ))}
+        </Box>
+      </Container>
+    </Box>
   );
 };
+
+export default Services;

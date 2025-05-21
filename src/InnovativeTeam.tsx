@@ -1,81 +1,162 @@
-import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
-import image1 from './asserts/2-20250410T042223Z-001/2/1.jpg';
-import image2 from './asserts/2-20250410T042223Z-001/2/2.jpg';
-import image3 from './asserts/2-20250410T042223Z-001/2/3.jpg';
-import image4 from './asserts/2-20250410T042223Z-001/2/1.jpg';
 
-export const InnovativeTeam: React.FC = () => {
+import React from "react";
+import { Box, Typography, Button } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
+// Local team images (replace with actual paths)
+import team1 from "./asserts/1-20250410T042209Z-001/1/team1.png";
+import team2 from "./asserts/1-20250410T042209Z-001/1/team2.png";
+import team3 from "./asserts/1-20250410T042209Z-001/1/team3.png";
+import team4 from "./asserts/1-20250410T042209Z-001/1/team4.png";
+import { color } from "framer-motion";
+
+const teamMembers = [
+  {
+    image: team1,
+    name: "Residential Cleaning",
+    description: "Cleaning Supervisor",
+  },
+  {
+    image: team2,
+    name: "Commercial Cleaning",
+    description: "Operations Manager",
+  },
+  {
+    image: team3,
+    name: "Construction Cleaning",
+    description: "Cleaning Technician",
+  },
+  {
+    image: team4,
+    name: "Landscape Cleaning",
+    description: "Marketing Coordinator",
+  },
+];
+
+const OurTeam: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: '#fff', py: { xs: 6, md: 10 }, position: 'relative', zIndex: 1  }}>
-      <Container maxWidth="xl">
-        {/* Heading & Paragraph */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            gap: 3,
-            textAlign: 'left',
-            mb: 6,
-          }}
-        >
+    <Box sx={{ py: 8, px: 2, backgroundColor: "#EFF3FF" }}>
+      {/* Heading */}
+      <Box sx={{ textAlign: "center", mb: 6 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 1 }}>
+          <CheckCircleIcon sx={{ color: "#D9315A" }} />
           <Typography
-            variant="h3"
             sx={{
-              fontWeight: 700,
-              fontFamily: '"DM Serif Display", serif',
-              color: '#008080',
-              fontSize: { xs: '2rem', md: '50px' },
+              fontSize: { xs: 20, md: 28 },
+              fontWeight: "bold",
+              color: "#D9315A",
+              fontFamily: "Urbanist",
+            }}
+          >
+            Our Team
+          </Typography>
+        </Box>
+
+        {/* Subheading */}
+        <Box sx={{ maxWidth: 725, mx: "auto" }}>
+          <Typography
+            sx={{
+              fontSize: { xs: 26, md: 46 },
+              fontWeight: 400,
+              color: "#008080",
+              fontFamily: "Urbanist",
+              mt: 2,
             }}
           >
             Dedicated Cleaning Experts with a Passion for Sparkle
           </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: '1.125rem',
-              lineHeight: 1.8,
-              color: '#555',
-              maxWidth: 800,
-            }}
-          >
-            Our highly motivated team is committed to providing top-quality cleaning services that exceed expectations. We combine innovation with attention to detail, ensuring every space is left spotless and refreshed. With us, you're not just hiring a service — you're gaining a partner who truly cares.
-          </Typography>
         </Box>
 
-        {/* Image Row */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: 4,
-          }}
+        <Typography
+          sx={{ fontSize: 16, mt: 1, color: "#7F8490", fontFamily: "DM Sans" }}
         >
-          {[image1, image2, image3,image4].map((img, index) => (
+          Serving <span style={{color:"#EE7F50"}}> 4,000+</span> properties every month.
+        </Typography>
+      </Box>
+
+      {/* Team Members */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: 4,
+          justifyContent: "center",
+          alignItems: "stretch",
+          flexWrap: "wrap",
+        }}
+      >
+        {teamMembers.map((member, index) => (
+          <Box
+            key={index}
+            sx={{
+              flex: 1,
+              minWidth: 250,
+              maxWidth: 300,
+              backgroundColor: "#ffffff",
+              borderRadius: 3,
+              boxShadow: 2,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              p: 3,
+              transition: "transform 0.3s ease",
+            }}
+          >
             <Box
-              key={index}
               component="img"
-              src={img}
-              alt={`Team at work ${index + 1}`}
+              src={member.image}
+              alt={member.name}
               sx={{
-                flex: '1 1 30%',
-                maxWidth: { xs: '100%', sm: '48%', md: '22%' },
-                height: 'auto',
-                objectFit: 'object-cover',
+                width: "100%",
+                height: 200,
+                objectFit: "cover",
                 borderRadius: 2,
-                boxShadow: 2,
-                transition: 'transform 0.3s ease-in-out',
-                '&:hover': {
-                  transform: 'scale(1.05)',
+                mb: 2,
+                transition: "transform 0.4s ease",
+                "&:hover": {
+                  transform: "scale(1.05)",
                 },
               }}
             />
-          ))}
-        </Box>
-      </Container>
+            <Typography
+              sx={{
+                fontSize: 18,
+                fontWeight: 600,
+                color: "#008080",
+                fontFamily: "Urbanist",
+              }}
+            >
+              {member.name}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: 14,
+                color: "#7F8490",
+                fontFamily: "DM Sans",
+                mt: 1,
+              }}
+            >
+              {member.description}
+            </Typography>
+            <Box sx={{ width: "100%", borderBottom: "1px solid #ccc", my: 2 }} />
+            <Button
+              variant="text"
+              sx={{
+                color: "#D9315A",
+                fontWeight: 500,
+                fontFamily: "Urbanist",
+                textTransform: "none",
+              }}
+            >
+              + FOLLOW ON TWITTER
+            </Button>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
+
+export default OurTeam;

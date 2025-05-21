@@ -6,87 +6,109 @@ import {
   useMediaQuery,
   useTheme,
   Box,
-  TextField,
   Button,
-  MenuItem,
 } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ResponsiveRootsBar from './component/navagationbar'; 
-
-
-import CleaningForm from "./component/cleaningfrom";
-import bgImage from "./asserts/1-20250410T042209Z-001/1/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.jpg";
-import { color } from "framer-motion";
-
+import ResponsiveRootsBar from './component/navagationbar';
+import heroImage from "./asserts/1-20250410T042209Z-001/1/Hero Image.svg";
+import icon from "./asserts/icon/Icon.png";
 const CleaningHeroSection: React.FC = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <>
-      {/* Hero Section with Background Image */}
       <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: 'auto',
-          paddingTop: { xs: 0, md: 2.2 },
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: 0,
-          '&::before': {
-            position: 'absolute',
-            content: '""',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: {xs: "100%", md: "100%"},
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            objectFit: 'cover',
-            backgroundPosition: {
-              xs: 'center',      // for small devices (xs)
-              md: 'top center',  // for medium and up (md+)
-            },
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.7, // 👈 Adjust opacity here
-            zIndex: -1,
-              px: 0 
-
-          }
-        }}
+       
       >
         <ResponsiveRootsBar />
 
-        {/* Content above background (like nav and hero text) */}
-        <Container maxWidth="xl" >
+        <Container maxWidth="xl">
+          {/* Hero Text Section */}
+         
+
+          {/* Image and Stats in a Single Row on lg+ */}
           <Box
+            sx={{
+              mt: 6,
+              display: "flex",
+              flexDirection: { xs: "column", lg: "row",  md: "row" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 4,
+              flexWrap: "nowrap",
+              padding: 0,
+              margin: 0,
+              height: { xs: "auto", lg: "60vh" },
+              overflow: {
+    xs: "hidden",
+    sm: "visible",
+    md: "visible",
+    lg: "visible",
+  },
+            }}
+          >
+             <Box
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
-              justifyContent: "space-between",
-              alignItems: "center",
+              justifyContent: "space-evenly",
+              alignItems: "start",
               gap: 0,
               overflow: "hidden",
-              padding: { xs: 0, md: 4 },
+              marginBottom: 0,
+              paddingBottom: 0,
             }}
           >
-            {/* Left Side Text */}
-            <Box sx={{ flex: 1, textAlign: { xs: "justify", md: "center" } }}>
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+                // height: { xs: "70vh", md: "auto" },
+              }}
+            >
+               <Box
+    sx={{
+      display: "flex",
+      alignItems: "start",
+      justifyContent: "start", // starts horizontally
+      gap: 1, // spacing between icon and text
+    }}
+  >
+   
+   <Box
+      component="img"
+      src={icon}
+      alt="Service Icon"
+      sx={{ width: 24, height: 24,  mt:{md:0 ,xs:2}}} // Adjust size as needed
+    />
+    <Typography
+      sx={{
+        fontFamily: '"Titan One", sans-serif',
+        fontWeight: "bold",
+        color: "#D9315A",
+        fontSize: 17,
+        mt:{ xs: 2, md: 0 },
+        textAlign: { xs: "start", md: "left" }
+      }}
+    >
+      Quick Bright - Cleaning Services
+    </Typography>
+  </Box>
+
               <Typography
                 sx={{
-                  fontFamily: '"DM Serif Display", serif',
+                  fontFamily: 'Urbanist',
                   fontWeight: 900,
                   color: "#008080",
-                  fontSize: { xs: "1.5rem", sm: "4rem", md: "52px" },
-                  maxWidth: "650px",
-                  textAlign: { xs: "center", md: "left" },
-
+                  fontSize: { xs: 35, md: 40 },
+                  textAlign: { xs: "start", md: "left" },
+                  marginTop: { xs: 4, md: 2 },
                 }}
               >
-                Residential <span style={{ color: "red" }}>&</span> Commercial
+                Residential & Commercial
                 cleaning services that you can trust.
               </Typography>
 
@@ -94,61 +116,101 @@ const CleaningHeroSection: React.FC = () => {
                 variant="h6"
                 component="p"
                 sx={{
-                  color: "black",
                   textAlign: { xs: "justify", md: "left" },
                   lineHeight: 1.7,
-                  maxWidth: "700px",
                   mt: 2,
-                  fontFamily: '"DM Serif Display", serif',
-
+                  color:"#7F8490",
+                  fontFamily: 'DM Sans',
+                  display: {  md: "block" },
+                  fontSize: 16,
                 }}
               >
                 We take pride in delivering top-quality cleaning services
-                tailored to meet your needs. <span style={{ color: "red" }}>Whether it’s industrial facilities,
-                residential spaces, or garden areas,</span> our professional team ensures
-                every corner is spotless. With attention to detail and a
+                tailored to meet your needs. Whether it’s industrial facilities,
+                residential spaces, or garden areas, our professional team
+                ensures every corner is spotless. With attention to detail and a
                 commitment to excellence, we create clean, safe, and welcoming
+                spaces.
               </Typography>
-              <style>
-  {`
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(10px);
-      }
-      60% {
-        transform: translateY(5px);
-      }
-    }
-  `}
-</style>
-
               <Box
-  sx={{
-    display: "flex",
-    justifyContent: { xs: "center", md: "center" },
-    mt: {xs: 5, md: 8 },
-    animation: "bounce 1s infinite",
-  }}
->
-  <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "red" }} />
-</Box>
+                sx={{
+                  display: { xs: "none", md: "block", },
+                }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "#0E5C67",
+                    fontSize: "12px",
+                    width: 123,
+                    height: 42,
+                    mt: 7,
+                    borderRadius: "30px",
+                    "&:hover": { backgroundColor: "#0E5C67" },
+                  }}
+                >
+                  Get Started
+                </Button>
+                <Button
+                  sx={{
+                    backgroundColor: "transparent",
+                    fontSize: "12px",
+                    width: 123,
+                    height: 42,
+                    mt: 7,
+ml: 2,
+                    color: "#0E5C67",
+                  }}
+                >
+                  How It Works?
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+            {/* Image Section */}
+            <Box
+              component="img"
+              src={heroImage}
+              // alt="Cleaning illustration"
+              sx={{
+                width: { xs: "145%", sm: "70%", md: "50%", lg: "40%" },
+                height: "auto",
+                borderRadius: 4,
+                marginBottom: { xs: 0, md: -16 },
+              }}
+            />
 
-            </Box> {/* Closing the unclosed Box */}
-
-            {/* Right Side Form */}
-            <CleaningForm />
+            {/* Stats Section */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "column", lg: "column" },
+                justifyContent: "space-around",
+                alignItems: { xs: "center", sm: "start", lg: "center" },
+                width: { xs: "100%", lg: "60%" },
+                gap: { xs: 3, sm: 4, lg: 6 },
+                flexWrap: "nowrap",
+              }}
+            >
+              {[
+                { label: "Residential Cleaning", value: "10K+" },
+                { label: "Commercial Cleaning", value: "126+" },
+                { label: "Construction Cleaning", value: "99%" },
+              ].map((item, index) => (
+                <Box key={index} sx={{ textAlign: "start" }}>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: "bold", color: "#008080",  fontSize: 46, alignItems: "start" }}
+                  >
+                    {item.value}
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: "#D9315A" }}>{item.label}</Typography>
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Container>
       </Box>
-       <Box sx={{ height: {xs:'40vh' ,md: '60vh'}}} />
-      
-            {/* Scrollable About Section */}
-            <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: -1 }}>
-             
-            </Box>
     </>
   );
 };

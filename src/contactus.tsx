@@ -11,11 +11,11 @@ export const ContactUs: React.FC = () => {
       {/* Fixed Hero Section */}
       <Box
        sx={{
-        position: 'absolute',
+        position: 'relative',
         top: 0,
         left: 0,
         width: '100%',
-        height: '100vh',
+        height: 'auto',
         paddingTop: { xs: 0, md: 2.2 },
         zIndex: 0,
         '&::before': {
@@ -44,17 +44,18 @@ export const ContactUs: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              height: '70vh',
+              height: '50vh',
             }}
           >
             <Typography
               sx={{
                 fontFamily: '"DM Serif Display", serif',
                 fontWeight: 900,
-                color: 'black',
+                 color: "#008080",
+                textAlign: 'center',
+                maxWidth: '1000px',
                 fontSize: { xs: '2.5rem', sm: '4rem', md: '80px' },
                 mt: { xs: 0, md: 1 },
-                maxWidth: '1000px',
               }}
             >
               Contact Us
@@ -65,9 +66,10 @@ export const ContactUs: React.FC = () => {
               component="p"
               sx={{
                 color: 'black',
-                textAlign: 'left',
+                textAlign: 'center',
                 lineHeight: 1.8,
-                maxWidth: '800px',
+                maxWidth: '1000px',
+
               }}
             >
               We offer a wide range of cleaning services tailored to your needs—
@@ -79,9 +81,7 @@ export const ContactUs: React.FC = () => {
       </Box>
 
       {/* Instead of spacer + empty section, just give ContactU a top margin */}
-      <Box sx={{ mt: '70vh', position: 'relative', zIndex: 1 }}>
-        {/* <LocationMap /> */}
-      </Box>
+     
     </>
   );
 };

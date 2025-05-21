@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.4f0361de.js",
+    "main.js": "/static/js/main.3567cb97.js",
     "static/media/2.jpg": "/static/media/2.361007137eb0f5cb18fa.jpg",
     "static/media/1.jpg": "/static/media/1.387bbca4f82dd842574d.jpg",
     "static/media/3.jpg": "/static/media/3.55c443f10557ba1f6d1f.jpg",
     "static/media/logo.png": "/static/media/logo.a327d0efe69ebeaab7db.png",
     "static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.jpg": "/static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.0298bda58d32f079e4f4.jpg",
+    "static/media/6.jpg": "/static/media/6.722e283711382a8c4d49.jpg",
+    "static/media/5.jpg": "/static/media/5.15d4de8430d276a36870.jpg",
+    "static/media/4.jpg": "/static/media/4.e56d858e2fe25c154a73.jpg",
+    "static/media/pexels-cottonbro-7705344.jpg": "/static/media/pexels-cottonbro-7705344.b5ea8068cc5bdb908211.jpg",
     "index.html": "/index.html",
-    "main.4f0361de.js.map": "/static/js/main.4f0361de.js.map"
+    "main.3567cb97.js.map": "/static/js/main.3567cb97.js.map"
   },
   "entrypoints": [
-    "static/js/main.4f0361de.js"
+    "static/js/main.3567cb97.js"
   ]
 }

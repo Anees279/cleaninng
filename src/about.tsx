@@ -13,11 +13,11 @@ export const About: React.FC = () => {
       {/* Fixed Hero Section */}
       <Box
         sx={{
-          position: 'absolute',
+          position: 'relative',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100vh',
+          height: 'auto',
           paddingTop: { xs: 0, md: 2.2 },
           zIndex: 0,
           '&::before': {
@@ -46,7 +46,8 @@ export const About: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              height: '70vh',
+              alignItems: 'center',
+              height: '50vh',
             //   px: 2,
             }}
           >
@@ -54,10 +55,10 @@ export const About: React.FC = () => {
               sx={{
                 fontFamily: '"DM Serif Display", serif',
                 fontWeight: 900,
-                color: 'black',
                 fontSize: { xs: '2.5rem', sm: '4rem', md: '80px' },
                 mt: { xs: 0, md: 1 },
                 maxWidth: '1000px',
+                color: "#008080"
               }}
             >
               About US
@@ -68,7 +69,7 @@ export const About: React.FC = () => {
               component="p"
               sx={{
                 color: 'black',
-                textAlign: 'left',
+                textAlign: 'center',
                 lineHeight: 1.8,
                 maxWidth: '800px',
               }}
@@ -82,12 +83,7 @@ export const About: React.FC = () => {
       </Box>
 
       {/* Spacer to offset full screen fixed hero */}
-      <Box sx={{ height: '50vh' }} />
-
-      {/* Scrollable About Section */}
-      <Box sx={{ py: 18, backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
-       
-      </Box>
+   
       {/* <AboutU/> */}
     </>
   );

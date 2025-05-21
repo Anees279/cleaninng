@@ -1,15 +1,16 @@
 import React from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import ResponsiveRootsBar from './component/navagationbar'; 
 import CleaningHeroSection from './home'// Adjust path as needed
-import { HireUs } from "./hireus";
-import { AboutUs } from "./aboutus";
-import { Clients } from "./client";
-import { ProjectCallToAction } from "./project";
-import { InnovativeTeam } from "./InnovativeTeam";
-import { SubscribeSection } from "./SubscribeSection";
-import {Footer} from './Footer'
-import {Services} from './services'
+import ServicesSection from "./servicesHome";
+
+import  Aboutus  from "./aboutus";
+import  WhyChooseUs from "./whychoos";
+import  Packages  from "./packages";
+import  OurTeam  from "./InnovativeTeam";
+import Testimonial from './testmoniol';
+import  Subscribe from "./SubscribeSection";
+import Footer from './Footer'
+import Services from './services'
 import {About} from './about'
 import {ContactUs} from './contactus'
 import { ContactU } from './contactus1';
@@ -46,22 +47,26 @@ const Roots: React.FC = () => {
       </div>
 
       {/* Only show the footer if the current route is not the home page */}
-      {location.pathname == '/about' && <AboutUs />}
       {location.pathname == '/contact' && <ContactU  />}
 
       {location.pathname == '/contact' && <LocationMap />}
 
       {location.pathname == '/service' && <ServicesCard/> }
 
-      {location.pathname !== '/service' && <HireUs />}
+      {location.pathname !== '/service' && <ServicesSection />}
+
+      {location.pathname !== '/about' && <Aboutus />}
+      {location.pathname !== '/service' && <Services />}
 
 
       {/* {location.pathname == '/contact' && <ContactU  />} */}
-        <Clients />
+        <WhyChooseUs />
+        <Packages/>
+        <OurTeam />
+        <Testimonial />
+        <Subscribe />
         <WhatsAppButton phoneNumber="+971 56 502 1171" message="Hello, I need help with your services!" />
-        <ProjectCallToAction />
-        <InnovativeTeam />
-        <SubscribeSection />
+
       <Footer />
     </div>
   );

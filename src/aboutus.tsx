@@ -1,81 +1,182 @@
-import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
-import { motion } from 'framer-motion';
-import aboutImage from './asserts/3-20250410T042226Z-001/3/3.jpg';
+import React from "react";
+import {
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Box,
+} from "@mui/material";
+import heroImage from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
+import icon from "./asserts/icon/Icon.png";
 
-export const AboutUs: React.FC = () => {
+const Aboutus: React.FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
   return (
-    <Box
-      sx={{
-        backgroundColor: '#FFF9C4',
-        py: { xs: 6, md: 10 },
-        position: 'relative', zIndex: 1 
-      }}
-    >
+    <Box sx={{ width: "100%", backgroundColor: "#fff", py: { xs: 6, md: 10 } }}>
       <Container maxWidth="xl">
+        {/* Two Top Boxes: Text + Stats */}
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: "flex-start",
             gap: 6,
           }}
         >
-          {/* Left - Text Content */}
-          <Box sx={{ flex: 1, color: '#424242' }}>
-            <Typography
-              variant="h4"
-              sx={{ fontWeight: 700, mb: 3, fontFamily: 'Poppins, sans-serif' }}
+          {/* Text Content Box */}
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "start",
+              alignItems: "start",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+              }}
             >
-              About Us
-            </Typography>
-            <Typography sx={{ mb: 2, fontSize: '1.1rem', textAlign: 'justify' }}>
-              We are a team of dedicated cleaning professionals with over a decade of experience in delivering top-tier residential, commercial, and post-construction cleaning services.
+              <Box
+                component="img"
+                src={icon}
+                alt="Service Icon"
+                sx={{ width: 24, height: 24 }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "Urbanist",
+                  fontWeight: "bold",
+                  color: "#D9315A",
+                  fontSize: 17,
+                }}
+              >
+                About us
+              </Typography>
+            </Box>
+
+            <Typography
+              sx={{
+                fontFamily: "Urbanist",
+                fontWeight: 400,
+                color: "#008080",
+                fontSize: { xs: 32, md: 44 },
+                mt: 4,
+              }}
+            >
+              Clean Home with Our Professional Cleaning Services
             </Typography>
 
             <Typography
-              variant="h6"
-              sx={{ fontWeight: 600, mt: 4, fontFamily: 'Poppins, sans-serif' }}
+              variant="body1"
+              sx={{
+                fontFamily: "DM Sans",
+                color: "#7F8490",
+                fontSize: 16,
+                mt: 2,
+                lineHeight: 1.7,
+                textAlign: "justify",
+              }}
             >
-              Mission.
-            </Typography>
-            <Typography sx={{ textAlign: 'justify', mb: 2 }}>
-              Our mission is to provide exceptional cleaning services that create healthier environments for our clients — whether it’s their home, office, or construction site. We focus on affordability, efficiency, and eco-friendly practices to ensure complete customer satisfaction.
-            </Typography>
-
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: 600, mt: 4, fontFamily: 'Poppins, sans-serif' }}
-            >
-              Vision.
-            </Typography>
-            <Typography sx={{ textAlign: 'justify' }}>
-              Our vision is to be the most trusted name in the cleaning industry by setting new standards in service quality, customer care, and sustainability. We aim to continuously evolve our practices to create cleaner, safer, and more welcoming spaces for everyone we serve.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis. Sagittis a sapien pulvinar etiam.
             </Typography>
           </Box>
 
-          {/* Right - Image with Hover Effect */}
-          <motion.img
-  src={aboutImage}
-  alt="About us"
-  style={{
-    flex: 1,
-    width: '100%',
-    maxHeight: 400,
-    borderRadius: 16,
-    boxShadow: '0px 8px 20px rgba(0,0,0,0.15)',
-    objectFit: 'cover',
-    marginTop: '20px', // add top margin if you want it to float a bit
-  }}
-  initial={{ opacity: 0, x: -100 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  whileHover={{ scale: 1.05 }}
-  transition={{ duration: 1 }}
-  viewport={{ once: true }}
-/>
-          
+          {/* Stats Box */}
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 4,
+              width: "100%",
+              justifyContent: "center",
+              alignItems: { xs: "flex-start", md: "flex-start" },
+            }}
+          >
+            {[
+              { label: "Experienced", value: 98 },
+              { label: "Reliable", value: 86 },
+              { label: "Skilled & Capable", value: 90 },
+              { label: "Flexible", value: 80 },
+            ].map((item, index) => (
+              <Box key={index} sx={{ width: "100%", maxWidth: 570 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    mb: 1,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: 600,
+                      fontFamily: "Urbanist",
+                      fontSize: 16,
+                      color: "#0E5C67",
+                    }}
+                  >
+                    {item.label}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontWeight: 500,
+                      fontFamily: "Urbanist",
+                      fontSize: 16,
+                      color: "red",
+                    }}
+                  >
+                    {item.value}%
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: 10,
+                    backgroundColor: "#D1D1DC",
+                    borderRadius: 5,
+                    overflow: "hidden",
+                    boxShadow: "inset 0 0 0 1px #ccc",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: `${item.value}%`,
+                      height: "100%",
+                      backgroundColor: "#0E5C67",
+                      transition: "width 0.5s ease-in-out",
+                    }}
+                  />
+                </Box>
+              </Box>
+            ))}
+          </Box>
         </Box>
+
+        {/* Image Below */}
+        <Box
+          component="img"
+          src={heroImage}
+          alt="Cleaning illustration"
+          sx={{
+            width: { xs: "100%", sm: "100%", md: "100%" },
+            height: { xs: "auto", sm: "auto", md: 601 },
+            borderRadius: 4,
+            mt: { xs: 6, md: 10 },
+            mx: "auto",
+            display: "block",
+          }}
+        />
       </Container>
     </Box>
   );
 };
+
+export default Aboutus;
