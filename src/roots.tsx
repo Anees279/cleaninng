@@ -1,17 +1,9 @@
 import React from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import CleaningHeroSection from './home'// Adjust path as needed
-import ServicesSection from "./servicesHome";
-
-import  Aboutus  from "./aboutus";
-import  WhyChooseUs from "./whychoos";
-import  Packages  from "./packages";
-import  OurTeam  from "./InnovativeTeam";
-import Testimonial from './testmoniol';
-import  Subscribe from "./SubscribeSection";
+import AboutUs from './About/aboutus'
 import Footer from './Footer'
 import Services from './services'
-import {About} from './about'
 import {ContactUs} from './contactus'
 import { ContactU } from './contactus1';
 import { ServicesCard } from './Servicecard';
@@ -37,7 +29,7 @@ const Roots: React.FC = () => {
         <Route path="/" element={<CleaningHeroSection />} />
 
            <Route path="/service" element={<Services />} />
-           <Route path="/about" element={<About />} />
+           <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
           
 
@@ -53,18 +45,7 @@ const Roots: React.FC = () => {
 
       {location.pathname == '/service' && <ServicesCard/> }
 
-      {location.pathname !== '/service' && <ServicesSection />}
-
-      {location.pathname !== '/about' && <Aboutus />}
-      {location.pathname !== '/service' && <Services />}
-
-
-      {/* {location.pathname == '/contact' && <ContactU  />} */}
-        <WhyChooseUs />
-        <Packages/>
-        <OurTeam />
-        <Testimonial />
-        <Subscribe />
+      
         <WhatsAppButton phoneNumber="+971 56 502 1171" message="Hello, I need help with your services!" />
 
       <Footer />

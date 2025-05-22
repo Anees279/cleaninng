@@ -6,10 +6,10 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
-import heroImage from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
-import icon from "./asserts/icon/Icon.png";
+import heroImage from "../asserts/About/Photo/2.jpeg";
+import icon from "../asserts/icon/Icon.png";
 
-const Aboutus: React.FC = () => {
+const AboutUSMain: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -183,4 +183,4 @@ const Aboutus: React.FC = () => {
   );
 };
 
-export default Aboutus;
+export default AboutUSMain;

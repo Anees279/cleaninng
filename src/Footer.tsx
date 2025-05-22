@@ -4,7 +4,7 @@ import logo from "./asserts/logos/QUICK-BRIGHT- 1.png"; // Replace with your act
 import { Link as RouterLink } from "react-router-dom";
 const Footer: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: "#0E5C67", mt: 10, pt: 6, pb: 3 }}>
+    <Box sx={{ backgroundColor: "#0E5C67", mt: 0, pt: 6, pb: 3 }}>
       <Container maxWidth="xl">
         <Box
           sx={{

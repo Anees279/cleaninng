@@ -52,6 +52,7 @@ const WhyChooseUs: React.FC = () => {
             flexDirection: { xs: "column", md: "row" },
             gap: 6,
             alignItems: "center",
+           
           }}
         >
           {/* Image Wrapper with background for small devices */}

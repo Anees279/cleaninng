@@ -8,7 +8,7 @@ import PricingIcon from "./asserts/icon/Icon.png"; // Icon for Pricing Table hea
 const packages = [
   {
     title: "Basic Cleaning",
-    price: "$350",
+    price: "AED 25",
     description:
       "Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut dolor felis quis.",
     features: [
@@ -23,7 +23,7 @@ const packages = [
   },
   {
     title: "Pro Cleaning",
-    price: "$650",
+    price: "AED 35",
     description:
       "Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut dolor felis quis.",
     features: [
@@ -37,16 +37,15 @@ const packages = [
     
   },
   {
-    title: "Deluxe Cleaning",
-    price: "$950",
+    title: "Car Wash at Your Doorstep",
+    price: "AED 25",
     description:
       "Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut dolor felis quis.",
     features: [
-      "120 Minutes Consultation",
-      "4 Bedroom Cleaning",
-      "5 Bathroom Cleaning",
-      "1 Living Room Cleaning",
-      "7 Days Guarantee",
+"Basic Car Wash	AED 25	Within 10 KM",
+      "Full Car Wash	AED 30	Within 10 KM",
+      "Weekly Car Wash	AED 100	4 times a month",
+      "Interior Detailing	AED 60	Seats, dashboard, vacuum",
     ],
     bgColor: "#F5F2F7",
     
