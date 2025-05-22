@@ -4,7 +4,11 @@ import backgroundImage from "../asserts/About/Photo/1.png"; // Replace with actu
 import ResponsiveRootsBar from "../component/navagationbar";
 import AboutUSMain from "./aboutusmain"; 
 import OurMession from "./ourmession"// Replace with actual path
-import StatisticsSection from "./statetaics"; // Replace with actual path
+import StatisticsSection from "./statetaics";
+import OurValue from "./overvalus"; // Replace with actual path
+import HowItWorks from "./howitwork" // Replace with actual path
+import OurTeam from "../InnovativeTeam"; // Replace with actual path
+import ContactSection from "./contactfrom"; // Replace with actual path
 const AboutUs: React.FC = () => {
   return (
     <>
@@ -74,7 +78,15 @@ const AboutUs: React.FC = () => {
       <AboutUSMain />
       <OurMession />
       <StatisticsSection />
+      <OurValue />
       {/* Add any other sections or components here */}
+      {/* Example: <Services /> */}
+      <HowItWorks />
+      <OurTeam />
+      <ContactSection />
+      {/* Add any other sections or components here */}
+      {/* Example: <Testimonials /> */}
+      
     </>
   );
 };
