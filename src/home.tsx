@@ -7,6 +7,7 @@ import {
   Box,
   Button,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import ServicesSection from "./servicesHome";
 
 import Aboutus from "./aboutus";
@@ -22,7 +23,10 @@ import icon from "./asserts/icon/Icon.png";
 const CleaningHeroSection: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
-
+ const navigate = useNavigate();
+  const goToServiceSection = () => {
+    navigate("/about#how-it-work");
+  };
   return (
     <>
       <Box>
@@ -155,6 +159,8 @@ const CleaningHeroSection: React.FC = () => {
                     Get Started
                   </Button>
                   <Button
+                       onClick={goToServiceSection} 
+
                     sx={{
                       backgroundColor: "transparent",
                       fontSize: "12px",

@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import {
   AppBar,
@@ -12,7 +13,6 @@ import {
   Drawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
 import img from "../asserts/logos/logo.png";
 
@@ -20,9 +20,6 @@ const pages = [
   { name: "Home", link: "/home" },
   { name: "About us", link: "/about" },
   { name: "Services", link: "/service" },
-
-  { name: "Pages", link: "/service" },
-
   { name: "Contact us", link: "/contact" },
 ];
 
@@ -42,7 +39,6 @@ function HomeHero() {
   return (
     <Box
       sx={{
-        // background: `linear-gradient(to right, white 50%, transparent 50%)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
@@ -112,11 +108,7 @@ function HomeHero() {
                   {page.name}
                 </Button>
               ))}
-              <Box
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
-              >
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
                 <Button
                   variant="contained"
                   sx={{
@@ -133,8 +125,6 @@ function HomeHero() {
               </Box>
             </Box>
 
-            {/* Get Started button for large screens */}
-
             {/* Mobile Menu Icon */}
             <Box
               sx={{
@@ -149,7 +139,7 @@ function HomeHero() {
                 onClick={handleToggleDrawer}
                 color="inherit"
               >
-                {drawerOpen ? <CloseIcon /> : <MenuIcon />}
+                <MenuIcon />
               </IconButton>
             </Box>
           </Toolbar>
@@ -158,16 +148,19 @@ function HomeHero() {
 
       {/* Mobile Drawer Menu */}
       <Drawer
-        anchor="top"
+        anchor="left"
         open={drawerOpen}
         onClose={handleToggleDrawer}
         variant="temporary"
         ModalProps={{ keepMounted: true }}
         PaperProps={{
           sx: {
+            display: { xs: "block", md: "none" },
             width: "100%",
-            height: "100vh",
+            height: "auto",
             backgroundColor: "#fff",
+            marginTop: "100px",
+            borderTop: "1px solid #ccc",
           },
         }}
       >
@@ -175,32 +168,41 @@ function HomeHero() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            gap: 2,
+            alignItems: "flex-start",
+            textAlign: "left",
+            px: 3,
+            py: 2,
+            gap: 1,
           }}
         >
-          <IconButton onClick={handleToggleDrawer} sx={{ alignSelf: "center" }}>
-            <CloseIcon />
-          </IconButton>
-
           {pages.map((page) => (
-            <Button
-              key={page.name}
-              onClick={handleToggleDrawer}
-              href={page.link}
-              sx={{ color: "#000", fontSize: "18px" }}
-            >
-              {page.name}
-            </Button>
+            <React.Fragment key={page.name}>
+              <Button
+                onClick={handleToggleDrawer}
+                href={page.link}
+                fullWidth
+                sx={{
+                  justifyContent: "flex-start",
+                  color: "#000",
+                  fontSize: "16px",
+                  textTransform: "none",
+                  px: 0,
+                }}
+              >
+                {page.name}
+              </Button>
+              <hr style={{ width: "100%", border: "0.5px solid #ccc" }} />
+            </React.Fragment>
           ))}
 
           <Button
             variant="contained"
+            fullWidth
             sx={{
               backgroundColor: "#0E5C67",
               "&:hover": { backgroundColor: "#0E5C67" },
-              width: "100%",
+              borderRadius: "30px",
+              mt: 2,
             }}
           >
             Get Started

@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -12,6 +13,7 @@ import serviceIcon from "./asserts/icon/Icon3.png";
 import icon from "./asserts/icon/Icon.png";
 
 const Services: React.FC = () => {
+    const navigate = useNavigate();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -113,19 +115,20 @@ const Services: React.FC = () => {
 
           {isMdUp && (
             <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#0E5C67",
-                fontSize: "12px",
-                width: 123,
-                height: 42,
-                borderRadius: "30px",
-                alignSelf: "flex-start",
-                "&:hover": { backgroundColor: "#0E5C67" },
-              }}
-            >
-              All Services
-            </Button>
+      variant="contained"
+      onClick={() => navigate("/service")} // 👈 Navigate on click
+      sx={{
+        backgroundColor: "#0E5C67",
+        fontSize: "12px",
+        width: 123,
+        height: 42,
+        borderRadius: "30px",
+        alignSelf: "flex-start",
+        "&:hover": { backgroundColor: "#D9315A" },
+      }}
+    >
+      All Services
+    </Button>
           )}
         </Box>
 

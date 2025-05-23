@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -42,9 +44,18 @@ const steps = [
 const HowItWorks: React.FC = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+const location = useLocation();
 
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.substring(1));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
-    <Box sx={{ backgroundColor: "#FFF", py: 6 }}>
+    <Box id="how-it-work" sx={{ backgroundColor: "#FFF", py: 6 }}>
       <Box
         sx={{
           maxWidth: "xl",
