@@ -10,6 +10,7 @@ import {
 import ServicesSection from "./servicesHome";
 
 import Aboutus from "./aboutus";
+import Services from "./services"
 import WhyChooseUs from "./whychoos";
 import Packages from "./packages";
 import OurTeam from "./InnovativeTeam";
@@ -222,6 +223,7 @@ const CleaningHeroSection: React.FC = () => {
       </Box>
       <ServicesSection />
       <Aboutus />
+      <Services />
       <WhyChooseUs />
       <Packages />
       <OurTeam />

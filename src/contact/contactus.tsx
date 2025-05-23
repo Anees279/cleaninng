@@ -15,7 +15,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import emailjs from "@emailjs/browser";
 import StarIcon from "@mui/icons-material/Star";
 
-const ContactSection: React.FC = () => {
+const Contactus: React.FC = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const formRef = useRef<HTMLFormElement>(null);
@@ -63,7 +63,7 @@ const ContactSection: React.FC = () => {
           maxWidth: "xl",
           mx: "auto",
           display: "flex",
-          flexDirection: { xs: "column-reverse", md: "row" },
+          flexDirection: { xs: "column-reverse", md: "row-reverse" },
           gap: 6,
           justifyContent: "center",
           alignItems: "center",
@@ -144,7 +144,6 @@ const ContactSection: React.FC = () => {
 
         {/* Right: Heading and Contact Details */}
         <Box sx={{ flex: 1 }}>
-          
 
           <Typography
             sx={{
@@ -154,9 +153,8 @@ const ContactSection: React.FC = () => {
               fontFamily: "Urbanist",
               mb: 1,
             }}
-            
           >
-              <StarIcon sx={{ color: "#D9315A" }} />
+            <StarIcon sx={{ color: "#D9315A",  }} />
             Contact Us
           </Typography>
 
@@ -253,4 +251,4 @@ alignItems: { xs: "center", md: "flex-start" },
   );
 };
 
-export default ContactSection;
+export default Contactus;
