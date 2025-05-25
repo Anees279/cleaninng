@@ -9,7 +9,8 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const steps = [
   {
     number: "01",
@@ -45,7 +46,13 @@ const HowItWorks: React.FC = () => {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 const location = useLocation();
-
+useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: false, // animations will trigger every time the element scrolls into view
+      // triggers on scroll up as well
+    });
+  }, []);
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.substring(1));
@@ -142,6 +149,7 @@ const location = useLocation();
           {steps.map((step, index) => (
             <Box
               key={index}
+              data-aos="fade-up-right"
               sx={{
                 flex: 1,
                 backgroundColor: "white",

@@ -1,9 +1,11 @@
 
-import React from "react";
+import React,{ useEffect } from "react";
 import { Box, Typography, Button, Card, CardContent } from "@mui/material";
 import CheckIcon from "./asserts/icon/arrow-right-circle.png"; // Replace with your storage icon path if different
 import PricingIcon from "./asserts/icon/Icon.png"; // Icon for Pricing Table heading
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+;
 
 const packages = [
   {
@@ -53,6 +55,12 @@ const packages = [
 ];
 
 const Packages = () => {
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    }, []); 
   return (
     <Box sx={{ px: 2, py: 6, textAlign: "center" }}>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mb: 1 }}>
@@ -107,8 +115,11 @@ const Packages = () => {
         }}
       >
         {packages.map((pkg, index) => (
+          
           <Box
             key={index}
+             data-aos="fade-up" // 👈 Add this here
+    data-aos-delay={index * 100} 
             sx={{
               flex: "1 1 300px",
               maxWidth: 330,
@@ -196,3 +207,4 @@ const Packages = () => {
 };
 
 export default Packages;
+

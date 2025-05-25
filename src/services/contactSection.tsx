@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image1 from "../asserts/services/Image1.png";
@@ -8,7 +9,7 @@ const ContactSection: React.FC = () => {
   return (
     <Box sx={{ backgroundColor: "#F5F2F7", py: 6, px: 2 , borderRadius: 5 }}>
       {/* Top Images */}
-        <Box
+      <Box
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -23,7 +24,7 @@ const ContactSection: React.FC = () => {
         <Box sx={{ zIndex: 2, mx: -.001 }}>
           <img src={Image2} alt="icon2" width={80} height={80} />
         </Box>
-        <Box sx={{ zIndex: 1, position: "relative", right: 18,  }}>
+        <Box sx={{ zIndex: 1, position: "relative", right: 18 }}>
           <img src={Image3} alt="icon3" width={70} height={70} />
         </Box>
       </Box>
@@ -57,9 +58,13 @@ const ContactSection: React.FC = () => {
         felis quis. Sagittis a sapien pulvinar etiam.
       </Typography>
 
-      {/* Contact Button */}
+      {/* Contact Button with WhatsApp Link */}
       <Box sx={{ textAlign: "center", mt: 4 }}>
         <Button
+          component="a"
+          href="https://wa.me/971568630019"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="contained"
           sx={{
             backgroundColor: "#0E5C67",
@@ -73,7 +78,7 @@ const ContactSection: React.FC = () => {
             textTransform: "none",
             '&:hover': {
               backgroundColor: "#D9315A",
-            },
+            }
           }}
         >
           Contact Us

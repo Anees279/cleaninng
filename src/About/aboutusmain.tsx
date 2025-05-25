@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect}from "react";
 import {
   Container,
   Typography,
@@ -8,11 +8,18 @@ import {
 } from "@mui/material";
 import heroImage from "../asserts/About/Photo/2.jpeg";
 import icon from "../asserts/icon/Icon.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const AboutUSMain: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
-
+ useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: false, // animations will trigger every time the element scrolls into view
+      // triggers on scroll up as well
+    });
+  }, []);
   return (
     <Box sx={{ width: "100%", backgroundColor: "#fff", py: { xs: 6, md: 10 } }}>
       <Container maxWidth="xl">
@@ -165,6 +172,7 @@ const AboutUSMain: React.FC = () => {
   component="img"
   src={heroImage}
   alt="Cleaning illustration"
+   data-aos="fade-up-right"
   sx={{
     width: { xs: "100%", sm: "100%", md: "90%" },
     height: { xs: "auto", sm: "auto", md: 601 },

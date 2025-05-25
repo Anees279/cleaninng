@@ -1,14 +1,15 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Local team images (replace with actual paths)
 import team1 from "./asserts/1-20250410T042209Z-001/1/team1.png";
 import team2 from "./asserts/1-20250410T042209Z-001/1/team2.png";
 import team3 from "./asserts/1-20250410T042209Z-001/1/team3.png";
 import team4 from "./asserts/1-20250410T042209Z-001/1/team4.png";
-import { color } from "framer-motion";
 
 const teamMembers = [
   {
@@ -34,6 +35,14 @@ const teamMembers = [
 ];
 
 const OurTeam: React.FC = () => {
+   useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    }, []);
+ 
+
   return (
     <Box sx={{ py: 8, px: 2, backgroundColor: "#EFF3FF" }}>
       {/* Heading */}
@@ -67,10 +76,8 @@ const OurTeam: React.FC = () => {
           </Typography>
         </Box>
 
-        <Typography
-          sx={{ fontSize: 16, mt: 1, color: "#7F8490", fontFamily: "DM Sans" }}
-        >
-          Serving <span style={{color:"#EE7F50"}}> 4,000+</span> properties every month.
+        <Typography sx={{ fontSize: 16, mt: 1, color: "#7F8490", fontFamily: "DM Sans" }}>
+          Serving <span style={{ color: "#EE7F50" }}> 4,000+</span> properties every month.
         </Typography>
       </Box>
 
@@ -88,6 +95,8 @@ const OurTeam: React.FC = () => {
         {teamMembers.map((member, index) => (
           <Box
             key={index}
+          data-aos="fade-up" // 👈 Add this here
+    data-aos-delay={index * 100} // Optional: stagger animation
             sx={{
               flex: 1,
               minWidth: 250,

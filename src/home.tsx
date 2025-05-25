@@ -1,4 +1,6 @@
-import React from "react";
+import React,{ useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   Container,
   Typography,
@@ -27,6 +29,12 @@ const CleaningHeroSection: React.FC = () => {
   const goToServiceSection = () => {
     navigate("/about#how-it-work");
   };
+   useEffect(() => {
+        AOS.init({
+          duration: 1000,
+          once: false,
+        });
+      }, []); 
   return (
     <>
       <Box>
@@ -57,13 +65,14 @@ const CleaningHeroSection: React.FC = () => {
             }}
           >
             <Box
+             data-aos="fade-up"
+     data-aos-duration="3000"
               sx={{
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
                 justifyContent: "space-evenly",
                 alignItems: "start",
                 gap: 0,
-                overflow: "hidden",
                 marginBottom: 0,
                 paddingBottom: 0,
               }}
@@ -180,6 +189,8 @@ const CleaningHeroSection: React.FC = () => {
             <Box
               component="img"
               src={heroImage}
+  data-aos="flip-left"
+              data-aos-delay="200"
               // alt="Cleaning illustration"
               sx={{
                 width: { xs: "145%", sm: "70%", md: "50%", lg: "40%" },
@@ -206,7 +217,17 @@ const CleaningHeroSection: React.FC = () => {
                 { label: "Commercial Cleaning", value: "126+" },
                 { label: "Construction Cleaning", value: "99%" },
               ].map((item, index) => (
-                <Box key={index} sx={{ textAlign: "start" }}>
+                <Box key={index}
+                  data-aos="fade-left"
+                  data-aos-delay={index * 100}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "start",
+                    gap: 1,
+                    width: { xs: "100%", sm: "80%", lg: "100%" },
+                    textAlign: "start"
+                  }}>
                   <Typography
                     variant="h4"
                     sx={{

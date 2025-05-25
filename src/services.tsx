@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -11,12 +11,19 @@ import {
 } from "@mui/material";
 import serviceIcon from "./asserts/icon/Icon3.png";
 import icon from "./asserts/icon/Icon.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Services: React.FC = () => {
     const navigate = useNavigate();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
-
+useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false, // animations will trigger every time the element scrolls into view
+      mirror: true, // triggers on scroll up as well
+    });
+  }, []);
   const services = [
     {
       title: "Office Cleaning",
@@ -146,6 +153,8 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <Box
               key={index}
+              data-aos="fade-up" // 👈 Add this for animation
+              data-aos-delay={index * 150}
               sx={{
                 position: "relative",
                 borderRadius: 3,

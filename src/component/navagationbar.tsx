@@ -173,6 +173,7 @@ function HomeHero() {
             px: 3,
             py: 2,
             gap: 1,
+            backgroundColor:"rgb(231, 223, 223)",
           }}
         >
           {pages.map((page) => (

@@ -14,7 +14,7 @@ import StarIcon from "@mui/icons-material/Star";
 import img from "../asserts/1-20250410T042209Z-001/1/Image.png";
 import imgMobile from "../asserts/1-20250410T042209Z-001/1/image2.png";
 import mobileBackground from "../asserts/1-20250410T042209Z-001/1/bg.png";
-import founderImage from "../asserts/1-20250410T042209Z-001/1/test3.png"; // Replace with actual path
+import founderImage from "../asserts/1-20250410T042209Z-001/1/test2.png"; // Replace with actual path
 
 const OurMession: React.FC = () => {
   const theme = useTheme();
@@ -129,7 +129,7 @@ const OurMession: React.FC = () => {
                     fontFamily: "Urbanist",
                   }}
                 >
-                  Miguel Rodriguez<br /> <span style={{color:"#7F8490"}}>Founder & CEO</span> 
+                  Raja Sujahat<br /> <span style={{color:"#7F8490"}}>Founder & CEO</span> 
                 </Typography>
               </Box>
             </Box>
