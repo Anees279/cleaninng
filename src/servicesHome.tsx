@@ -42,9 +42,9 @@ const ServicesSection: React.FC = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", md: "row", sm: "row" },
             flexWrap: { xs: "wrap", md: "nowrap" },
-            gap: { xs: 0, md: 3, lg: 4 },
+            gap: { xs: 0, md: 3, lg: 4},
             justifyContent: { xs: "center", md: "space-between" },
             alignItems: "stretch",
           }}
@@ -58,7 +58,7 @@ const ServicesSection: React.FC = () => {
                 p: { xs: 1, md: 4 },
                 flex: {
                   xs: "1 1 100%",
-                  sm: "1 1 100%",
+                  sm: "1 1 20%",
                   md: "1 1 25%",
                 },
                 minHeight: 250,

@@ -60,7 +60,7 @@ useEffect(() => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", md: "row", sm: "row" },
             justifyContent: "space-between",
             alignItems: { xs: "flex-start", md: "center" },
             mb: 5,
@@ -159,7 +159,7 @@ useEffect(() => {
                 position: "relative",
                 borderRadius: 3,
                 p: { xs: 2, md: 2 },
-                flex: { xs: "1 1 100%", sm: "1 1 45%", md: "1 1 23%" },
+                flex: { xs: "1 1 100%", sm: "1 1 10%", md: "1 1 23%" },
                 minHeight: 280,
                 display: "flex",
                 flexDirection: "column",

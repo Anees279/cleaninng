@@ -65,7 +65,7 @@ const CleaningHeroSection: React.FC = () => {
             sx={{
               mt: 6,
               display: "flex",
-              flexDirection: { xs: "column", lg: "row", md: "row" },
+              flexDirection: { xs: "column", lg: "row", md: "row",sm: "row" },
               justifyContent: "space-between",
               alignItems: "center",
               gap: 4,
@@ -220,7 +220,7 @@ const CleaningHeroSection: React.FC = () => {
                 width: { xs: "145%", sm: "70%", md: "50%", lg: "40%" },
                 height: "auto",
                 borderRadius: 4,
-                marginBottom: { xs: 0, md: -16 },
+                marginBottom: { xs: 0  , md: -38, lg: -23, sm: -45 },
               }}
             />
 
