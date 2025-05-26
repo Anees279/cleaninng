@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   Typography,
@@ -6,20 +7,88 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
-import heroImage from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
-import icon from "./asserts/icon/Icon.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import heroImage from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
+import icon from "./asserts/icon/Icon.png";
+
+interface Stat {
+  label: string;
+  value: number;
+}
+
+const stats: Stat[] = [
+  { label: "Experienced", value: 98 },
+  { label: "Reliable", value: 86 },
+  { label: "Skilled & Capable", value: 90 },
+  { label: "Flexible", value: 80 },
+];
+
 const Aboutus: React.FC = () => {
-    useEffect(() => {
-    AOS.init({
-      duration: 3000,
-      once: false, // animations will trigger every time the element scrolls into view
-      // triggers on scroll up as well
-    });
-  }, []);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const [percentages, setPercentages] = useState<number[]>(new Array(stats.length).fill(0));
+  const progressRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    AOS.init({ duration: 3000, once: false });
+
+    const observers: IntersectionObserver[] = [];
+
+    stats.forEach((stat, index) => {
+      const ref = progressRefs.current[index];
+      if (!ref) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            animateProgress(index, stat.value);
+          } else {
+            setPercentages((prev) => {
+              const updated = [...prev];
+              updated[index] = 0;
+              return updated;
+            });
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(ref);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        const ref = progressRefs.current[index];
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  const animateProgress = (index: number, target: number) => {
+    let start = 0;
+    const duration = 1500;
+    const startTime = performance.now();
+
+    const step = (timestamp: number) => {
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = Math.floor(progress * target);
+
+      setPercentages((prev) => {
+        const updated = [...prev];
+        updated[index] = currentValue;
+        return updated;
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
 
   return (
     <Box sx={{ width: "100%", backgroundColor: "#fff", py: { xs: 6, md: 10 } }}>
@@ -35,28 +104,9 @@ const Aboutus: React.FC = () => {
           }}
         >
           {/* Text Content Box */}
-          <Box
-            sx={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "start",
-              alignItems: "start",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-              }}
-            >
-              <Box
-                component="img"
-                src={icon}
-                alt="Service Icon"
-                sx={{ width: 24, height: 24 }}
-              />
+          <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Box component="img" src={icon} alt="Service Icon" sx={{ width: 24, height: 24 }} />
               <Typography
                 sx={{
                   fontFamily: "Urbanist",
@@ -106,23 +156,16 @@ const Aboutus: React.FC = () => {
               gap: 4,
               width: "100%",
               justifyContent: "center",
-              alignItems: { xs: "flex-start", md: "flex-start" },
+              alignItems: "flex-start",
             }}
           >
-            {[
-              { label: "Experienced", value: 98 },
-              { label: "Reliable", value: 86 },
-              { label: "Skilled & Capable", value: 90 },
-              { label: "Flexible", value: 80 },
-            ].map((item, index) => (
-              <Box key={index} sx={{ width: "100%", maxWidth: 570 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    mb: 1,
-                  }}
-                >
+            {stats.map((item, index) => (
+              <Box
+                key={index}
+                ref={(el) => { progressRefs.current[index] = el as HTMLDivElement | null; }}
+                sx={{ width: "100%", maxWidth: 570 }}
+              >
+                <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
                   <Typography
                     sx={{
                       fontWeight: 600,
@@ -141,7 +184,7 @@ const Aboutus: React.FC = () => {
                       color: "red",
                     }}
                   >
-                    {item.value}%
+                    {percentages[index]}%
                   </Typography>
                 </Box>
                 <Box
@@ -156,10 +199,10 @@ const Aboutus: React.FC = () => {
                 >
                   <Box
                     sx={{
-                      width: `${item.value}%`,
+                      width: `${percentages[index]}%`,
                       height: "100%",
-                      backgroundColor: "#0E5C67",
-                      transition: "width 0.5s ease-in-out",
+                      background: "linear-gradient(to right, #0E5C67, #0E5C67)",
+                      transition: "width 0.05s linear",
                     }}
                   />
                 </Box>
@@ -169,24 +212,24 @@ const Aboutus: React.FC = () => {
         </Box>
 
         {/* Image Below */}
-       <Box
-  component="img"
-  src={heroImage}
-  alt="Cleaning illustration"
-  data-aos="fade-up-right"
-  sx={{
-    width: { xs: "100%", sm: "100%", md: "90%" },
-    height: { xs: "auto", sm: "auto", md: 601 },
-    borderRadius: 4,
-    mt: { xs: 6, md: 10 },
-    mx: 0,
-    display: "block",
-    transition: "transform 0.5s ease", // Smooth animation
-    "&:hover": {
-      transform: "scale(1.05)", // Zoom in on hover
-    },
-  }}
-/>
+        <Box
+          component="img"
+          src={heroImage}
+          alt="Cleaning illustration"
+          data-aos="fade-up-right"
+          sx={{
+            width: { xs: "100%", sm: "100%", md: "90%" },
+            height: { xs: "auto", sm: "auto", md: 601 },
+            borderRadius: 4,
+            mt: { xs: 6, md: 10 },
+            mx: 0,
+            display: "block",
+            transition: "transform 0.5s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+        />
       </Container>
     </Box>
   );

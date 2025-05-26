@@ -7,7 +7,7 @@ import Services from './services/services'
 import Contact from './contact/contact'
 // import { ContactU } from './contactus1';
 import WhatsAppButton from "./component/whatappbutton";
-
+import GlowingCursor from "./component/glowing";
  // Adjust path as needed
 const Roots: React.FC = () => {
   const location = useLocation(); // To access the current route
@@ -42,7 +42,7 @@ const Roots: React.FC = () => {
 
       
         <WhatsAppButton phoneNumber="+971 56 502 1171" message="Hello, I need help with your services!" />
-
+<GlowingCursor />
       <Footer />
     </div>
   );
