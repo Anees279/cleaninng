@@ -72,7 +72,7 @@ const CleaningHeroSection: React.FC = () => {
               flexWrap: "nowrap",
               padding: 0,
               margin: 0,
-              height: { xs: "auto", lg: "75vh" },
+              height: { xs: "auto", lg: "69vh" },
               overflow: "hidden", // Prevents overflow on smaller screens
               // overflow: {
               //   xs: "hidden",
