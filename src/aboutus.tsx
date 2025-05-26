@@ -219,7 +219,7 @@ const Aboutus: React.FC = () => {
           data-aos="fade-up-right"
           sx={{
             width: { xs: "100%", sm: "100%", md: "90%" },
-            height: { xs: "auto", sm: "auto", md: 601 },
+            height: { xs: "auto", sm: "auto", md: "auto" },
             borderRadius: 4,
             mt: { xs: 6, md: 10 },
             mx: 0,
