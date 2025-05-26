@@ -7,11 +7,14 @@ import {
   MenuItem,
   Button,
 } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
 import emailjs from "emailjs-com";
 
-const CleaningForm = () => {
+interface CleaningFormProps {
+  onSuccess: () => void;
+  submitted: boolean;
+}
+
+const CleaningForm: React.FC<CleaningFormProps> = ({ onSuccess, submitted }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -22,7 +25,6 @@ const CleaningForm = () => {
   });
 
   const [errors, setErrors] = useState<Partial<typeof formData>>({});
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,7 +35,6 @@ const CleaningForm = () => {
       [name]: value,
     }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
-    setSubmitted(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,34 +50,34 @@ const CleaningForm = () => {
       return;
     }
 
-    // Send email with mapped variables
-    emailjs.send(
-      "service_x8mpym4",
-      "template_lis2mtn",
-      {
-        name: formData.name,
-        phone: formData.phone,
-        service: formData.service,
-        date: formData.date,
-        zip: formData.zip,
-        email: formData.email,
-      },
-      "vNTJPFm6qfynG5ACM"
-    )
-    .then(() => {
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        phone: "",
-        service: "",
-        date: "",
-        zip: "",
-        email: "",
+    emailjs
+      .send(
+        "service_x8mpym4",
+        "template_gjzsa53",
+        {
+          name: formData.name,
+          phone: formData.phone,
+          service: formData.service,
+          date: formData.date,
+          zip: formData.zip,
+          email: formData.email,
+        },
+        "vNTJPFm6qfynG5ACM"
+      )
+      .then(() => {
+        setFormData({
+          name: "",
+          phone: "",
+          service: "",
+          date: "",
+          zip: "",
+          email: "",
+        });
+        onSuccess();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
       });
-    })
-    .catch((err) => {
-      console.error("EmailJS error:", err);
-    });
   };
 
   return (
@@ -84,17 +85,21 @@ const CleaningForm = () => {
       component="form"
       onSubmit={handleSubmit}
       sx={{
-        flex: 1,
-        // backgroundColor: "rgba(255, 255, 255, 0.9)",
-        p: {xs: 0, md: 4},
+        width: {
+          xs: "100%", // small devices
+          sm: "90%",  // tablets
+          md: "400px", // large devices
+        },
+        p: {
+          xs: 2, // small devices
+          sm: 3, // tablets
+          md: 4, // large
+        },
+        m: "auto",
         borderRadius: 2,
         boxShadow: 3,
-        maxWidth: "400px",
-        width: "100%",
-        mt: { xs:1, md: 0 },
-        // mb: { xs: 2, md: 0 },
-        // display: { xs: "none", md: "block" },
-        position: "relative",
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        backdropFilter: "blur(5px)",
         zIndex: 10,
       }}
     >
@@ -188,64 +193,15 @@ const CleaningForm = () => {
           variant="contained"
           color={submitted ? "success" : "primary"}
           fullWidth
-          sx={{ "&:hover": { backgroundColor: "#008080", border: "2px solid black" } }}
+          sx={{
+            "&:hover": {
+              backgroundColor: "#008080",
+              border: "2px solid black",
+            },
+          }}
         >
           {submitted ? "Successfully Submitted" : "Submit"}
         </Button>
-
-        {/* Contact Info */}
-        <Box
-          sx={{
-            mt: 2,
-            display: "flex",
-            flexDirection: "row",
-            gap: 1,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {/* Phone */}
-          {/* <Box sx={{ display: "flex", gap: 1 }}>
-            <Box
-              sx={{
-                border: "2px solid #008080",
-                borderRadius: "50%",
-                padding: "5px",
-                display: "flex",
-                justifyContent: "center",
-                color: "#008080",
-                transition: "all 0.3s ease",
-                "&:hover": { borderColor: "#ff4d4d", color: "#ff4d4d" },
-              }}
-            >
-              <PhoneIcon fontSize="small" />
-            </Box>
-            <Typography variant="body2" fontWeight="bold">
-              Hotline <br /> +971 56 502 1171
-            </Typography>
-          </Box> */}
-
-          {/* Email */}
-          {/* <Box sx={{ display: "flex", gap: 1 }}>
-            <Box
-              sx={{
-                border: "2px solid #008080",
-                borderRadius: "50%",
-                padding: "5px",
-                display: "flex",
-                justifyContent: "center",
-                color: "#008080",
-                transition: "all 0.3s ease",
-                "&:hover": { borderColor: "#ff4d4d", color: "#ff4d4d" },
-              }}
-            >
-              <EmailIcon fontSize="small" />
-            </Box>
-            <Typography variant="body2" fontWeight="bold">
-              Gmail <br /> info@quickbrightcleaners.com
-            </Typography>
-          </Box> */}
-        </Box>
       </Box>
     </Box>
   );

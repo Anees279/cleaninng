@@ -22,6 +22,8 @@ import Subscribe from "./SubscribeSection";
 import ResponsiveRootsBar from "./component/navagationbar";
 import heroImage from "./asserts/1-20250410T042209Z-001/1/Hero Image.svg";
 import icon from "./asserts/icon/Icon.png";
+import CleaningModal from "./component/CleaningModal"; // ✅ Import the modal
+
 const CleaningHeroSection: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
@@ -35,6 +37,21 @@ const CleaningHeroSection: React.FC = () => {
           once: false,
         });
       }, []); 
+      const [modalOpen, setModalOpen] = React.useState(false);
+  // This function is a placeholder for toggling a drawer (e.g., sidebar or modal drawer).
+  // Since there is no drawer state or component in this code, we'll leave it as a no-op.
+  function handleToggleDrawer() {
+    // No drawer to toggle in this context.
+  }
+
+  function handleOpenModal() {
+    setModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setModalOpen(false);
+  }
+
   return (
     <>
       <Box>
@@ -153,20 +170,26 @@ const CleaningHeroSection: React.FC = () => {
                     display: { xs: "none", md: "block" },
                   }}
                 >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#0E5C67",
-                      fontSize: "12px",
+                    <Button
+                              variant="contained"
+                              fullWidth
+                              sx={{
+                                fontSize: "12px",
                       width: 123,
                       height: 42,
                       mt: 7,
-                      borderRadius: "30px",
-                      "&:hover": { backgroundColor: "#0E5C67" },
-                    }}
-                  >
-                    Get Started
-                  </Button>
+                      color: "#fff",
+                                backgroundColor: "#0E5C67",
+                                "&:hover": { backgroundColor: "#0E5C67" },
+                                borderRadius: "30px",
+                              }}
+                              onClick={() => {
+                                handleToggleDrawer();
+                                handleOpenModal();
+                              }}
+                            >
+                              BOOK NOW
+                            </Button>
                   <Button
                        onClick={goToServiceSection} 
 
@@ -247,6 +270,8 @@ const CleaningHeroSection: React.FC = () => {
             </Box>
           </Box>
         </Container>
+      <CleaningModal open={modalOpen} onClose={handleCloseModal} />
+
       </Box>
       <ServicesSection />
       <Aboutus />

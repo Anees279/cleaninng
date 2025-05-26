@@ -13,8 +13,8 @@ import {
   Drawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { grey } from "@mui/material/colors";
 import img from "../asserts/logos/logo.png";
+import CleaningModal from "./CleaningModal"; // ✅ Import the modal
 
 const pages = [
   { name: "Home", link: "/home" },
@@ -27,9 +27,18 @@ function HomeHero() {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false); // ✅ Modal state
 
   const handleToggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
+  };
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   React.useEffect(() => {
@@ -48,14 +57,11 @@ function HomeHero() {
         zIndex: 0,
       }}
     >
-      {/* Navbar */}
       <AppBar
         position="static"
         sx={{
           backgroundColor: "#fff",
           color: "black",
-          fontFamily: "Urbanist",
-          fontWeight: 900,
           height: 100,
           boxShadow: "none",
           justifyContent: "center",
@@ -66,7 +72,6 @@ function HomeHero() {
             disableGutters
             sx={{ justifyContent: "space-between", gap: 2 }}
           >
-            {/* Logo on Left */}
             <Box
               component="a"
               href="#"
@@ -79,12 +84,7 @@ function HomeHero() {
                 borderRadius: 2,
               }}
             >
-              <Box
-                sx={{
-                  height: "100%",
-                  px: 1,
-                }}
-              >
+              <Box sx={{ height: "100%", px: 1 }}>
                 <img
                   src={img}
                   alt="Logo"
@@ -108,7 +108,7 @@ function HomeHero() {
                   {page.name}
                 </Button>
               ))}
-              <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Box>
                 <Button
                   variant="contained"
                   sx={{
@@ -119,13 +119,14 @@ function HomeHero() {
                     borderRadius: "30px",
                     "&:hover": { backgroundColor: "#0E5C67" },
                   }}
+                  onClick={handleOpenModal} // ✅ Trigger modal
                 >
                   Get Started
                 </Button>
               </Box>
             </Box>
 
-            {/* Mobile Menu Icon */}
+            {/* Mobile Menu */}
             <Box
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -146,7 +147,7 @@ function HomeHero() {
         </Container>
       </AppBar>
 
-      {/* Mobile Drawer Menu */}
+      {/* Drawer */}
       <Drawer
         anchor="left"
         open={drawerOpen}
@@ -157,9 +158,8 @@ function HomeHero() {
           sx: {
             display: { xs: "block", md: "none" },
             width: "100%",
-            height: "auto",
-            backgroundColor: "#fff",
             marginTop: "100px",
+            backgroundColor: "#fff",
             borderTop: "1px solid #ccc",
           },
         }}
@@ -168,12 +168,10 @@ function HomeHero() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-start",
-            textAlign: "left",
             px: 3,
             py: 2,
             gap: 1,
-            backgroundColor:"rgb(231, 223, 223)",
+            backgroundColor: "rgb(170, 165, 165)",
           }}
         >
           {pages.map((page) => (
@@ -205,11 +203,18 @@ function HomeHero() {
               borderRadius: "30px",
               mt: 2,
             }}
+            onClick={() => {
+              handleToggleDrawer();
+              handleOpenModal();
+            }}
           >
             Get Started
           </Button>
         </Box>
       </Drawer>
+
+      {/* ✅ Modal */}
+      <CleaningModal open={modalOpen} onClose={handleCloseModal} />
     </Box>
   );
 }
