@@ -73,12 +73,13 @@ const CleaningHeroSection: React.FC = () => {
               padding: 0,
               margin: 0,
               height: { xs: "auto", lg: "68vh" },
-              overflow: {
-                xs: "hidden",
-                sm: "visible",
-                md: "visible",
-                lg: "visible",
-              },
+              overflow: "hidden", // Prevents overflow on smaller screens
+              // overflow: {
+              //   xs: "hidden",
+              //   sm: "visible",
+              //   md: "hidden",
+              //   lg: "visible",
+              // },
             }}
           >
             <Box
