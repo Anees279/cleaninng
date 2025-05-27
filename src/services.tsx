@@ -1,5 +1,4 @@
-
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -14,10 +13,10 @@ import icon from "./asserts/icon/Icon.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Services: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
-useEffect(() => {
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       once: false, // animations will trigger every time the element scrolls into view
@@ -53,6 +52,7 @@ useEffect(() => {
         width: "100%",
         backgroundColor: "#FFF",
         py: { xs: 4, md: 8 },
+        
       }}
     >
       <Container maxWidth="xl">
@@ -62,10 +62,10 @@ useEffect(() => {
             display: "flex",
             flexDirection: { xs: "column", md: "row", sm: "row" },
             justifyContent: "space-between",
-            alignItems: { xs: "flex-start", md: "center" },
+            alignItems: { xs: "flex-start", md: "center" , lg : "center"},
             mb: 5,
             gap: 2,
-            alignitem: "center",
+            
           }}
         >
           <Box>
@@ -123,21 +123,21 @@ useEffect(() => {
 
           {isMdUp && (
             <Button
-      variant="contained"
-      onClick={() => navigate("/service")} // 👈 Navigate on click
-      sx={{
-        backgroundColor: "#0E5C67",
-        fontSize: "12px",
-        width: 123,
-        height: 42,
-        mr:{ xs: 0, md: 2 , lg:20},
-        borderRadius: "30px",
-        alignSelf: "flex-start",
-        "&:hover": { backgroundColor: "#D9315A" },
-      }}
-    >
-      All Services
-    </Button>
+              variant="contained"
+              onClick={() => navigate("/service")} // 👈 Navigate on click
+              sx={{
+                backgroundColor: "#0E5C67",
+                fontSize: "12px",
+                width: 123,
+                height: 42,
+                mr: { xs: 0, md: 2, lg: 20 },
+                borderRadius: "30px",
+                alignSelf: "flex-start",
+                "&:hover": { backgroundColor: "#D9315A" },
+              }}
+            >
+              All Services
+            </Button>
           )}
         </Box>
 
@@ -150,7 +150,7 @@ useEffect(() => {
             gap: { xs: 4, md: 1 },
             justifyContent: { xs: "center", md: "space-between" },
             alignItems: "start",
-            maxWidth: { xs: "100%", md: "100%", lg: "90%"},
+            maxWidth: { xs: "100%", md: "100%", lg: "90%" },
           }}
         >
           {services.map((service, index) => (
@@ -159,7 +159,7 @@ useEffect(() => {
               data-aos="fade-up" // 👈 Add this for animation
               data-aos-delay={index * 150}
               sx={{
-                position: "relative",
+                // position: "relative",
                 borderRadius: 3,
                 p: { xs: 2, md: 2 },
                 flex: { xs: "1 1 100%", sm: "1 1 10%", md: "1 1 23%" },
@@ -211,29 +211,29 @@ useEffect(() => {
 
               {/* Learn More Button at bottom right */}
               <Box
-  sx={{
-    display: "flex",
-    justifyContent: "flex-start",
-    ml: 0, // Make sure there's no left margin
-    pl: 0, // Also remove left padding if any
-  }}
->
-  <Button
-    variant="outlined"
-    sx={{
-      fontSize: 14,
-      textTransform: "none",
-      color: "#EE7F50",
-      border: ".5px solid #EE7F50",
-      px: 2, // Optional: remove horizontal padding from button if needed
-      "&:hover": {
-        border: "2px solid #008080",
-      },
-    }}
-  >
-    Learn More
-  </Button>
-</Box>
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  ml: 0, // Make sure there's no left margin
+                  pl: 0, // Also remove left padding if any
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  sx={{
+                    fontSize: 14,
+                    textTransform: "none",
+                    color: "#EE7F50",
+                    border: ".5px solid #EE7F50",
+                    px: 2, // Optional: remove horizontal padding from button if needed
+                    "&:hover": {
+                      border: "2px solid #008080",
+                    },
+                  }}
+                >
+                  Learn More
+                </Button>
+              </Box>
             </Box>
           ))}
         </Box>

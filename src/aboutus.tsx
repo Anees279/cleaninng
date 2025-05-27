@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import heroImage from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
+import heroImage from "./asserts/1-20250410T042209Z-001/1/office-cleaning-services 1.png";
 import icon from "./asserts/icon/Icon.png";
 
 interface Stat {

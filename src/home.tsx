@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import ServicesSection from "./servicesHome";
 
 import Aboutus from "./aboutus";
-import Services from "./services"
+import Services from "./services";
 import WhyChooseUs from "./whychoos";
 import Packages from "./packages";
 import OurTeam from "./InnovativeTeam";
@@ -27,17 +27,17 @@ import CleaningModal from "./component/CleaningModal"; // ✅ Import the modal
 const CleaningHeroSection: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
- const navigate = useNavigate();
+  const navigate = useNavigate();
   const goToServiceSection = () => {
     navigate("/about#how-it-work");
   };
-   useEffect(() => {
-        AOS.init({
-          duration: 1000,
-          once: false,
-        });
-      }, []); 
-      const [modalOpen, setModalOpen] = React.useState(false);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+  const [modalOpen, setModalOpen] = React.useState(false);
   // This function is a placeholder for toggling a drawer (e.g., sidebar or modal drawer).
   // Since there is no drawer state or component in this code, we'll leave it as a no-op.
   function handleToggleDrawer() {
@@ -65,7 +65,7 @@ const CleaningHeroSection: React.FC = () => {
             sx={{
               mt: 6,
               display: "flex",
-              flexDirection: { xs: "column", lg: "row", md: "row",sm: "row" },
+              flexDirection: { xs: "column", lg: "row", md: "row", sm: "row" },
               justifyContent: "space-between",
               alignItems: "center",
               gap: 4,
@@ -83,8 +83,8 @@ const CleaningHeroSection: React.FC = () => {
             }}
           >
             <Box
-             data-aos="fade-up"
-     data-aos-duration="3000"
+              data-aos="fade-up"
+              data-aos-duration="3000"
               sx={{
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
@@ -171,29 +171,28 @@ const CleaningHeroSection: React.FC = () => {
                     display: { xs: "none", md: "block" },
                   }}
                 >
-                    <Button
-                              variant="contained"
-                              fullWidth
-                              sx={{
-                                fontSize: "12px",
+                  <Button
+                    variant="contained"
+                    fullWidth
+                    sx={{
+                      fontSize: "12px",
                       width: 123,
                       height: 42,
                       mt: 7,
                       color: "#fff",
-                                backgroundColor: "#0E5C67",
-                                "&:hover": { backgroundColor: "#0E5C67" },
-                                borderRadius: "30px",
-                              }}
-                              onClick={() => {
-                                handleToggleDrawer();
-                                handleOpenModal();
-                              }}
-                            >
-                              BOOK NOW
-                            </Button>
+                      backgroundColor: "#0E5C67",
+                      "&:hover": { backgroundColor: "#0E5C67" },
+                      borderRadius: "30px",
+                    }}
+                    onClick={() => {
+                      handleToggleDrawer();
+                      handleOpenModal();
+                    }}
+                  >
+                    BOOK NOW
+                  </Button>
                   <Button
-                       onClick={goToServiceSection} 
-
+                    onClick={goToServiceSection}
                     sx={{
                       backgroundColor: "transparent",
                       fontSize: "12px",
@@ -213,14 +212,14 @@ const CleaningHeroSection: React.FC = () => {
             <Box
               component="img"
               src={heroImage}
-  data-aos="flip-left"
+              data-aos="flip-left"
               data-aos-delay="200"
               // alt="Cleaning illustration"
               sx={{
                 width: { xs: "145%", sm: "70%", md: "50%", lg: "40%" },
                 height: "auto",
                 borderRadius: 4,
-                marginBottom: { xs: 0  , md: -38, lg: -23, sm: -45 },
+                marginBottom: { xs: 0, md: -38, lg: -23, sm: -45 },
               }}
             />
 
@@ -241,7 +240,8 @@ const CleaningHeroSection: React.FC = () => {
                 { label: "Commercial Cleaning", value: "126+" },
                 { label: "Construction Cleaning", value: "99%" },
               ].map((item, index) => (
-                <Box key={index}
+                <Box
+                  key={index}
                   data-aos="fade-left"
                   data-aos-delay={index * 100}
                   sx={{
@@ -250,8 +250,9 @@ const CleaningHeroSection: React.FC = () => {
                     alignItems: "start",
                     gap: 1,
                     width: { xs: "100%", sm: "80%", lg: "100%" },
-                    textAlign: "start"
-                  }}>
+                    textAlign: "start",
+                  }}
+                >
                   <Typography
                     variant="h4"
                     sx={{
@@ -271,8 +272,7 @@ const CleaningHeroSection: React.FC = () => {
             </Box>
           </Box>
         </Container>
-      <CleaningModal open={modalOpen} onClose={handleCloseModal} />
-
+        <CleaningModal open={modalOpen} onClose={handleCloseModal} />
       </Box>
       <ServicesSection />
       <Aboutus />
