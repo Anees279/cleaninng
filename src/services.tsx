@@ -65,6 +65,7 @@ useEffect(() => {
             alignItems: { xs: "flex-start", md: "center" },
             mb: 5,
             gap: 2,
+            alignitem: "center",
           }}
         >
           <Box>
@@ -129,6 +130,7 @@ useEffect(() => {
         fontSize: "12px",
         width: 123,
         height: 42,
+        mr:{ xs: 0, md: 2 , lg:20},
         borderRadius: "30px",
         alignSelf: "flex-start",
         "&:hover": { backgroundColor: "#D9315A" },
@@ -145,9 +147,10 @@ useEffect(() => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             flexWrap: { xs: "wrap", md: "nowrap" },
-            gap: { xs: 4, md: 2 },
+            gap: { xs: 4, md: 1 },
             justifyContent: { xs: "center", md: "space-between" },
             alignItems: "start",
+            maxWidth: { xs: "100%", md: "100%", lg: "90%"},
           }}
         >
           {services.map((service, index) => (
