@@ -10,6 +10,8 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import heroImage from "./asserts/1-20250410T042209Z-001/1/office-cleaning-services 1.png";
+import hero from "./asserts/1-20250410T042209Z-001/1/5.jpeg";
+
 import icon from "./asserts/icon/Icon.png";
 
 interface Stat {
@@ -218,12 +220,31 @@ const Aboutus: React.FC = () => {
           alt="Cleaning illustration"
           data-aos="fade-up-right"
           sx={{
+            display: { xs: "none", md: "block" },
+
             width: { xs: "100%", sm: "100%", md: "90%" },
             height: { xs: "auto", sm: "auto", md: "auto" },
             borderRadius: 4,
             mt: { xs: 6, md: 10 },
             mx: 0,
-            display: "block",
+            transition: "transform 0.5s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+        />
+         <Box
+          component="img"
+          src={hero}
+          alt="Cleaning illustration"
+          data-aos="fade-up-right"
+          sx={{
+            display: { xs: "block", md: "none" },
+            width: { xs: "100%", sm: "100%", md: "90%" },
+            height: { xs: "auto", sm: "auto", md: "auto" },
+            borderRadius: 4,
+            mt: { xs: 6, md: 10 },
+            mx: 0,
             transition: "transform 0.5s ease",
             "&:hover": {
               transform: "scale(1.05)",
