@@ -1,19 +1,35 @@
 {
   "files": {
-    "main.js": "/static/js/main.3567cb97.js",
-    "static/media/2.jpg": "/static/media/2.361007137eb0f5cb18fa.jpg",
-    "static/media/1.jpg": "/static/media/1.387bbca4f82dd842574d.jpg",
-    "static/media/3.jpg": "/static/media/3.55c443f10557ba1f6d1f.jpg",
-    "static/media/logo.png": "/static/media/logo.a327d0efe69ebeaab7db.png",
-    "static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.jpg": "/static/media/happy-young-cleaners-with-mop-and-spray-bottle-smiling-at-camera-while-cleaning-office.0298bda58d32f079e4f4.jpg",
-    "static/media/6.jpg": "/static/media/6.722e283711382a8c4d49.jpg",
-    "static/media/5.jpg": "/static/media/5.15d4de8430d276a36870.jpg",
-    "static/media/4.jpg": "/static/media/4.e56d858e2fe25c154a73.jpg",
-    "static/media/pexels-cottonbro-7705344.jpg": "/static/media/pexels-cottonbro-7705344.b5ea8068cc5bdb908211.jpg",
+    "main.css": "/static/css/main.5a9d5748.css",
+    "main.js": "/static/js/main.5394e034.js",
+    "static/media/Hero Image.svg": "/static/media/Hero Image.08673735d3136953b99bb2dc898047f0.svg",
+    "static/media/contact.png": "/static/media/contact.1e3f1df963e188479adf.png",
+    "static/media/office-cleaning-services 1.png": "/static/media/office-cleaning-services 1.cd91ac20c4400fc2ae0b.png",
+    "static/media/services.png": "/static/media/services.fc91d087f1acd4ba4fcb.png",
+    "static/media/2.jpeg": "/static/media/2.346a7d0afb5e708afb1f.jpeg",
+    "static/media/1.png": "/static/media/1.b3f2fb7fe5dd385c3b6a.png",
+    "static/media/image2.png": "/static/media/image2.7bc4aabf8ba88d32c2b4.png",
+    "static/media/Image.png": "/static/media/Image.73793cedf10b0feb0738.png",
+    "static/media/5.jpeg": "/static/media/5.99fcb5a304236facf0b7.jpeg",
+    "static/media/overvalue.png": "/static/media/overvalue.23edff6e132ff663fbae.png",
+    "static/media/subscribe.png": "/static/media/subscribe.0294e8ffe7cca18b3f58.png",
+    "static/media/team4.png": "/static/media/team4.116194f77f9b468424f0.png",
+    "static/media/team1.png": "/static/media/team1.d0988dec466c33574afb.png",
+    "static/media/team2.png": "/static/media/team2.883c886b22f7dbec8584.png",
+    "static/media/team3.png": "/static/media/team3.036e3cab5736768560ad.png",
+    "static/media/QUICK-BRIGHT- 1.png": "/static/media/QUICK-BRIGHT- 1.06adfc5575a332755b1a.png",
+    "static/media/logo.png": "/static/media/logo.681ea85af787c6f1729b.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/Icon.svg": "/static/media/Icon.659b2bec9917d321b48ee40d77fbed94.svg",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.3567cb97.js.map": "/static/js/main.3567cb97.js.map"
+    "main.5a9d5748.css.map": "/static/css/main.5a9d5748.css.map",
+    "main.5394e034.js.map": "/static/js/main.5394e034.js.map"
   },
   "entrypoints": [
-    "static/js/main.3567cb97.js"
+    "static/css/main.5a9d5748.css",
+    "static/js/main.5394e034.js"
   ]
 }
